@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/pa_links_new2_cs_colorconfigurable.js" async="" charset="utf-8" type="text/javascript"></script><script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/single_image.js" async="" charset="utf-8" type="text/javascript"></script>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>Git版本控制软件结合GitHub从入门到精通常用命令学习手册 – 爱分享</title>
+<link rel="shortcut icon" href="http://www.ihref.com/ihref.ico">
+<script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/ca-pub-4019190604262164.js" type="text/javascript" async=""></script><script>
+window._deel = {
+    name: '爱分享',
+    url: 'http://www.ihref.com/wp-content/themes/d8-3_0',
+    rss: 'www.ihref.com/feed',
+    ajaxpager: '',
+    maillist: 'on',
+    maillistCode: '4a711b81b79f02ecee3a32544db26af6ec2342595f6c5d3d',
+    commenton: 1,
+    roll: [,]
+}
+</script>
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.ihref.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.4"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script type="text/javascript" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/wp-emoji-release.js"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="style-css" href="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/style.css" type="text/css" media="all">
+<script type="text/javascript" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/jquery.js"></script>
+<link rel="prev" title="win8系统进程多运行反应慢简单适用的优化方法" href="http://www.ihref.com/read-16345.html">
+<link rel="next" title="Git客户端图文详解如何安装配置GitHub操作流程攻略" href="http://www.ihref.com/read-16377.html">
+<link rel="canonical" href="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/read-16369_004.htm">
+<link rel="shortlink" href="http://www.ihref.com/?p=16369">
+<link rel="stylesheet" href="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/css.css" type="text/css" media="screen"><meta name="keywords" content="Git, GitHub, 常用命令, 手册, 软件应用">
+<meta name="description" content="注意：  学习前请先配置好Git客户端  相关文章：Git客户端图文详解如何安装配置GitHub操作流程攻略  官方中文手册：http://git-scm.com/book/zh GIT 学习手册简介 本站为 Git 学习参考手册。目的是为学习与记忆 Git 使用中最重要、最普遍的命令提供快速翻阅。 这些命令以你可能需要的操作类型划分，并且将提供日常使用中需要的一些常用的命令以及参数。  本手册将从入门到精通指导大家。 首先，我们要从如">
+<!--[if lt IE 9]><script src="http://www.ihref.com/wp-content/themes/d8-3_0/js/html5.js"></script><![endif]-->
+<script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/share.js"></script><link href="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/share_style1_32.css" rel="stylesheet"></head>
+<body class="single single-post postid-16369 single-format-standard"><div style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;" id="BAIDU_DUP_fp_wrapper"><iframe style="width: 0px; height: 0px; visibility: hidden; display: none;" src="http://pos.baidu.com/wh/o.htm?ltr=http%3A%2F%2Fwww.ihref.com%2Fread-16369.html&amp;cf=u" id="BAIDU_DUP_fp_iframe"></iframe></div>
+<header class="header">
+	<div class="navbar">
+		<div class="logo"><a href="http://www.ihref.com/" title="爱分享-生活、电脑、IT、编程知识及技巧分享">爱分享</a></div>
+		<ul class="nav">
+			<li id="menu-item-56" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-56"><a href="http://www.ihref.com/read-category/life">生活娱乐</a>
+<ul class="sub-menu">
+	<li id="menu-item-14586" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14586"><a href="http://www.ihref.com/read-category/life/baike">常识百科</a></li>
+	<li id="menu-item-14772" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14772"><a href="http://www.ihref.com/read-category/life/travel">旅游摄影</a></li>
+	<li id="menu-item-57" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-57"><a href="http://www.ihref.com/read-category/life/movie">电影</a></li>
+	<li id="menu-item-60" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60"><a href="http://www.ihref.com/read-category/life/music">音乐</a></li>
+</ul>
+</li>
+<li id="menu-item-61" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-61"><a href="http://www.ihref.com/read-category/computer">电脑手机</a>
+<ul class="sub-menu">
+	<li id="menu-item-1708" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1708"><a href="http://www.ihref.com/read-category/computer/system">故障解决</a></li>
+	<li id="menu-item-62" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62"><a href="http://www.ihref.com/read-category/computer/game">游戏娱乐</a></li>
+	<li id="menu-item-63" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-63"><a href="http://www.ihref.com/read-category/computer/software">软件应用</a></li>
+</ul>
+</li>
+<li id="menu-item-1580" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1580"><a href="http://www.ihref.com/read-category/website">网站电商</a></li>
+<li id="menu-item-16190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16190"><a href="http://www.ihref.com/pic">轻松一刻</a></li>
+<li id="menu-item-12886" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12886"><a href="http://www.ihref.com/read-category/zatan">杂谈</a></li>
+<li id="menu-item-12788" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12788"><a href="http://www.ihref.com/ishare">我要分享</a></li>
+<li id="menu-item-17236" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17236"><a title="畅聊" href="http://www.say588.com/">畅聊</a></li>
+		</ul><div class="screen-mini"><button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="icon-tasks icon-white"></i></button></div>
+		<div class="menu pull-right">
+			<form method="get" class="dropdown search-form" action="http://www.ihref.com/">
+				<input class="search-input" name="s" placeholder="输入关键字搜索" x-webkit-speech="" type="text"><input class="btn btn-success search-submit" value="搜索" type="submit">
+				<ul class="dropdown-menu search-suggest"></ul>
+			</form>
+			<div class="btn-group pull-left">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#feed">订阅</button>
+								<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">关注 <i class="caret"></i></button>
+				<ul class="dropdown-menu pull-right">
+										<li><a href="http://weibo.com/suyuwen1" target="_blank">新浪微博</a></li>														</ul>
+							</div>
+		</div>
+	</div>
+	<div class="speedbar">
+					<div class="pull-right">
+				<i class="icon-user icon12"></i> <a href="http://www.ihref.com/wp-login.php">登录</a>			</div>
+				<div class="toptip"><strong class="text-success">最新消息：</strong>加入500人QQ群：87696847<a style="color:red;padding-left:20px" target="_black" href="http://www.say588.com/">→ 进入畅聊网</a></div>
+	</div>
+</header>
+<section class="container">
+	<div class="content-wrap">
+	<div class="content">
+		<div class="breadcrumbs">你的位置：<a href="http://www.ihref.com/">爱分享</a> <small>&gt;</small> <a href="http://www.ihref.com/read-category/computer">电脑手机</a> <small>&gt;</small> <a href="http://www.ihref.com/read-category/computer/software">软件应用</a> <small>&gt;</small> <span class="muted">Git版本控制软件结合GitHub从入门到精通常用命令学习手册</span></div>
+				<header class="article-header">
+			<h1 class="article-title"><a href="http://www.ihref.com/read-16369.html">Git版本控制软件结合GitHub从入门到精通常用命令学习手册</a></h1>
+			<div class="meta">
+				<span class="muted"><a href="http://www.ihref.com/read-category/computer/software"><i class="icon-list-alt icon12"></i> 软件应用</a></span>				<span class="muted"><i class="icon-user icon12"></i> <a href="http://www.ihref.com/read-author/suyuwen1">爱分享</a></span>
+				<time class="muted"><i class="ico icon-time icon12"></i> 1年前 (2014-08-15)</time>
+				<span class="muted"><i class="ico icon-eye-open icon12"></i> 31974浏览</span>
+				<span class="muted"><i class="icon-comment icon12"></i> <a href="http://www.ihref.com/read-16369.html#comments">0评论</a></span>							</div>
+		</header>
+
+		<div class="banner banner-post"><div style="width:730px;margin:0px auto 0px auto"><div style="float:left;margin:0px 50px 0px 0px"><script async="" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/adsbygoogle.js"></script>
+<!-- 爱分享336*280内容上 -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-4019190604262164" data-ad-slot="1356372730"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<div style="float:left;width:336px;height:280px;"><div style="position:absolute;"><script type="text/javascript">
+    /*爱分享内容上336*280 创建于 2014-11-16*/
+    var cpro_id = "u1811091";
+</script>
+<script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1811091_0"><iframe id="cproIframe_u1811091_1" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/acom.htm" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="280" width="336"></iframe></div><script charset="utf-8" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/acom_004"></script>
+</div></div><div style="clear:both"></div></div>
+<div style="padding-top:20px"><script type="text/javascript">
+    /*标题下图广告960*90 创建于 2014-11-02*/
+    var cpro_id = "u1787106";
+</script>
+<script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1787106_0"><iframe id="cproIframe_u1787106_2" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/acom_002.htm" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="90" width="960"></iframe></div><script charset="utf-8" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/acom_002"></script></div></div>				<!-- 广告1结束 -->
+		<article class="article-content">
+			<p><img class="size-full wp-image-16371 aligncenter" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/git_003.jpg" alt="git版本控制软件" height="190" width="455"></p>
+<blockquote><p>注意：</p>
+<p>学习前请先配置好Git客户端</p>
+<p>相关文章：<a data-original-title="Git客户端图文详解如何安装配置GitHub操作流程攻略" title="" href="http://www.ihref.com/read-16377.html" target="_blank">Git客户端图文详解如何安装配置GitHub操作流程攻略</a></p>
+<p>官方中文手册：<a title="" data-original-title="" href="http://git-scm.com/book/zh" target="_blank">http://git-scm.com/book/zh</a></p></blockquote>
+<h2>GIT 学习手册简介</h2>
+<p>本站为 Git 学习参考手册。目的是为学习与记忆 Git 使用中最重要、最普遍的命令提供快速翻阅。 这些命令以你可能需要的操作类型划分，并且将提供日常使用中需要的一些常用的命令以及参数。</p>
+<p>本手册将从入门到精通指导大家。 首先，我们要从如何以 Git 的思维方式管理源代码开始。</p>
+<h2>如何以 GIT 的方式思考（<span style="color: #800000;">这节可以不用看懂，接着看下面的内容，看完就全懂了。</span>）</h2>
+<p>懂得 Git，第一件重要的事情就是要知道它与 Subversion、Perforce 或者任何你用过的版本控制工具都有着很大的差别。 通常，忘掉你预想的版本控制方式，改以 Git 的方式思考，能够帮助你更好地学习 Git。</p>
+<p>让我们从头开始。假设你正在设计一个新的源代码管理系统。在你使用某个工具之前，是如何完成基本的源码版本控制工作的呢？ 十有八九，你只是在项目到达某些阶段的时候，对项目做一份拷贝。</p>
+<pre> $ cp -R project project.bak</pre>
+<p>这样，你就可以在事情变得一团糟的时候很方便的返回到之前的状态，或者通过对比当前的项目与之前的拷贝，看看自己在之后的工作中，都做了哪些修改。</p>
+<p>如果你有点偏执，你可能会经常作上面说的事情，或许还会给项目拷贝加个日期：</p>
+<pre> $ cp -R project project.2010-06-01.bak</pre>
+<p>如此，你就有了一堆项目在各个阶段的快照，来作比较、查看。使用这种模式，你还可以有效地与人分享项目变更。 如果你会在项目到达一定阶段的时候给它打个包，丢到自己的网站上，那其他的开发者们，就能很方便地下载它，做点改动，并给你补丁回馈。</p>
+<pre> $ wget http://example.com/project.2010-06-01.zip
+ $ unzip project.2010-06-01.zip
+ $ cp -R project.2010-06-01 project-my-copy
+ $ cd project-my-copy
+ $ (做了某些修改)
+ $ diff project-my-copy project.2010-06-01 &gt; change.patch
+ $ (通过E-mail发送修改补丁)</pre>
+<p>以此方式，原先的开发者就能将其他人的改动应用到他的项目中去，其他开发者也能了解你做的变更。其实这便是许多开源项目采用过多年的协作方式。</p>
+<p>这办法其实很好使，所以假设我们现在想要写个工具，让这个办法更快、更简单。 我们与其实现一个工具以记录每个文件的版本，可能不如去实现个工具以使创建、储存项目的快照更加方便，不用每次都去人肉作整个项目的拷贝。</p>
+<p>这就是 Git 的精要所在。你通过&nbsp;<code>git commit</code>告诉 Git 你想保存一份项目快照， Git 就会为你的项目中的各个文件的当前状态存一份记录。之后，绝大部分的 Git 命令都围绕这些记录展开。 比如查看它们的区别（diff），提取它们的内容，等等。</p>
+<p></p><center><img class="alignnone size-full wp-image-16370" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/snapshots.png" alt="snapshots git" height="155" width="513"></center>如果你将 Git 看作一个排序、对比以及合并项目更新的工具，那就容易理解状况和正确做事了。<p></p>
+<h1 style="text-align: center;">目录</h1>
+<h3><a title="" data-original-title="" href="#1">获取与创建项目</a></h3>
+<ul>
+<li><a title="" data-original-title="" href="#1.1">Git使用前配置</a></li>
+<li><a title="" data-original-title="" href="#1.2">设置Git本地项目开发库默认路径</a></li>
+<li><a title="" data-original-title="" href="#1.3">配置本地用户和邮箱</a></li>
+<li><a title="" data-original-title="" href="#1.4">init</a></li>
+<li><a title="" data-original-title="" href="#1.5">clone</a></li>
+</ul>
+<h3><a title="" data-original-title="" href="#2">基本的快照</a></h3>
+<ul>
+<li><a title="" data-original-title="" href="#2.1">add</a></li>
+<li><a title="" data-original-title="" href="#2.2">status</a></li>
+<li><a title="" data-original-title="" href="#2.3">diff</a></li>
+<li><a title="" data-original-title="" href="#2.4">commit</a></li>
+<li><a title="" data-original-title="" href="#2.5">reset</a></li>
+<li><a title="" data-original-title="" href="#2.6">rm, mv</a></li>
+</ul>
+<h3><a title="" data-original-title="" href="#3">分支与合并</a></h3>
+<ul>
+<li><a title="" data-original-title="" href="#3.1">branch</a></li>
+<li><a title="" data-original-title="" href="#3.2">checkout</a></li>
+<li><a title="" data-original-title="" href="#3.3">merge</a></li>
+<li><a title="" data-original-title="" href="#3.4">log</a></li>
+<li><a title="" data-original-title="" href="#3.5">tag</a></li>
+</ul>
+<h3><a title="" data-original-title="" href="#4">分享与更新项目</a></h3>
+<ul>
+<li><a title="" data-original-title="" href="#4.1">fetch, pull</a></li>
+<li><a title="" data-original-title="" href="#4.2">push</a></li>
+<li><a title="" data-original-title="" href="#4.3">remote</a></li>
+</ul>
+<h3><a title="" data-original-title="" href="#5">检查与比较</a></h3>
+<ul>
+<li><a title="" data-original-title="" href="#5.1">log</a></li>
+<li><a title="" data-original-title="" href="#5.2">diff</a></li>
+</ul>
+<h1 id="1" style="text-align: center;">一、获取与创建项目</h1>
+<p>你得先有一个 Git 仓库，才能用它进行操作。仓库是 Git 存放你要保存的快照的数据的地方。</p>
+<p>拥有一个 Git 仓库的途径有两种。在已有的目录中，初始化一个新的，其一。 
+比如一个新的项目，或者一个已存在的项目，但该项目尚未有版本控制。如果你想要复制一份别人的项目， 或者与别人合作某个项目，也可以从一个公开的 
+Git 仓库克隆，其二。本章将对两者都做介绍。</p>
+<h2 id="1.1">Git使用前配置</h2>
+<p>如果设置了，在输入命令示界面可以很方便的使用复制和粘贴（用左键选取要复制的，点右键直接就可以复制，粘贴时只需点一下右键。）设置方法：Git Bash快捷图标（桌面图标）右键属性-选项，把快速编辑模式勾上就可以，如下图：</p>
+<p><img class="alignnone size-full wp-image-16404" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/git.jpg" alt="git快速编辑模式配置" height="526" width="444"></p>
+<p>&nbsp;</p>
+<h2 id="1.2">设置Git本地项目开发库默认路径</h2>
+<p>如果设置了，就不用每次打开Git再cd打开目录了。方法：右键Git Bash快捷图标（桌面图标）属性，找到快捷方式-起始位置，把你的项目地址放在这里就可以了。如下图：</p>
+<p style="color: #555555;"><img class="alignnone size-full wp-image-16401" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/git_002.jpg" alt="git默认项目开发库路径设置" data-bd-imgshare-binded="1" height="678" width="447"></p>
+<h2 id="1.3" class="nutshell">配置本地用户和邮箱</h2>
+<p>用户名邮箱作用 : 我们需要设置一个用户名 和 邮箱, 这是用来上传本地仓库到GitHub中, 在GitHub中显示代码上传者;<br>
+使用命令 :</p>
+<pre>git config --global user.name "HanShuliang" //设置用户名 
+git config --global user.email "13241153187@163.com" //设置邮箱</pre>
+<p><img class="alignnone size-full wp-image-16394" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/git17.png" alt="git客户端版本控制软件" data-bd-imgshare-binded="1" height="96" width="457"></p>
+<p>到此Git客户端已安装及GitHub配置完成，现在可以从GitHub传输代码了。</p>
+<h2 id="1.4">git init 将一个目录初始化为 Git 仓库</h2>
+<p>在目录中执行&nbsp;<code>git init</code>，就可以创建一个 Git 仓库了。比如，我们恰好有个目录，里头有些许文件，如下：</p>
+<pre><b>$ cd konnichiwa</b>
+<b>$ ls</b>
+README   hello.rb
+</pre>
+<p>在这个项目里头，我们会用各种编程语言写 “Hello World” 实例。 到目前为止，我们只有 Ruby 的，不过，这才刚上路嘛。为了开始用 Git 对这个项目作版本控制，我们执行一下&nbsp;<code>git init</code>。</p>
+<pre><b>$ git init</b>
+Initialized empty Git repository in /opt/konnichiwa/.git/
+# 在 /opt/konnichiwa/.git 目录初始化空 Git 仓库完毕。
+</pre>
+<p>现在你可以看到在你的项目目录中有个&nbsp;<code>.git</code>&nbsp;的子目录。 这就是你的 Git 仓库了，所有有关你的此项目的快照数据都存放在这里。</p>
+<pre><b>$ ls -a</b>
+.        ..       .git     README   hello.rb
+</pre>
+<p>恭喜，现在你就有了一个 Git 仓库的架子，可以开始快照你的项目了。</p>
+<blockquote>
+<p class="nutshell"><strong>简而言之</strong>，用&nbsp;<code>git init</code>&nbsp;来在目录中创建新的 Git 仓库。 你可以在任何时候、任何目录中这么做，完全是本地化的。</p>
+</blockquote>
+<h2 id="1.5" class="nutshell">git clone 复制一个 Git 仓库，以上下其手</h2>
+<p>如果你需要与他人合作一个项目，或者想要复制一个项目，看看代码，你就可以克隆那个项目。 执行&nbsp;<code>git clone [url]</code>，[url] 为你想要复制的项目，就可以了。</p>
+<pre><b>$ git clone git://github.com/schacon/simplegit.git</b>
+Initialized empty Git repository in /private/tmp/simplegit/.git/
+remote: Counting objects: 100, done.
+remote: Compressing objects: 100% (86/86), done.
+remote: Total 100 (delta 35), reused 0 (delta 0)
+Receiving objects: 100% (100/100), 9.51 KiB, done.
+Resolving deltas: 100% (35/35), done.
+<b>$ cd simplegit/</b>
+<b>$ ls</b>
+README   Rakefile <span class="blue" style="color: #444477;">lib</span>
+</pre>
+<p>上述操作将复制该项目的全部记录，让你本地拥有这些。并且该操作将拷贝该项目的主分支， 使你能够查看代码，或编辑、修改。进到该目录中，你会看到&nbsp;<code>.git</code>&nbsp;子目录。 所有的项目数据都存在那里。</p>
+<pre><b>$ ls -a</b>
+.        ..       <span class="blue" style="color: #444477;">.git</span>     README   Rakefile <span class="blue" style="color: #444477;">lib</span>
+<b>$ cd .git</b>
+<b>$ ls</b>
+HEAD        description <span class="blue" style="color: #444477;">info</span>        packed-refs
+<span class="blue" style="color: #444477;">branches    hooks       logs        refs</span>
+config      index       <span class="blue" style="color: #444477;">objects</span>
+</pre>
+<p>默认情况下，Git 会按照你提供的 URL 所指示的项目的名称创建你的本地项目目录。 通常就是该 URL 最后一个&nbsp;<code>/</code>&nbsp;之后的任何东西。如果你想要一个不一样的名字， 你可以在该命令后加上它，就在那个 URL 后面。</p>
+<blockquote>
+<p class="nutshell"><strong>简而言之</strong>，使用&nbsp;<code>git clone</code>&nbsp;拷贝一个 Git 仓库到本地，让自己能够查看该项目，或者进行修改。</p>
+</blockquote>
+<h1 id="2" class="nutshell" style="text-align: center;">二、基本快照</h1>
+<p>Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。本章将对有关创建与提交你的项目的快照的命令作介绍。</p>
+<p>这里有个重要的概念，Git 有一个叫做“索引”的东东，有点像是你的快照的缓存区。这就使你能够从更改的文件中创建出一系列组织良好的快照，而不是一次提交所有的更改。</p>
+<blockquote>
+<p class="nutshell"><strong>简而言之</strong>，使用&nbsp;<code>git add</code>&nbsp;添加需要追踪的新文件和待提交的更改， 然后使用&nbsp;<code>git status</code>&nbsp;和&nbsp;<code>git diff</code>&nbsp;查看有何改动， 最后用&nbsp;<code>git commit</code>&nbsp;将你的快照记录。这就是你要用的基本流程，绝大部分时候都是这样的。</p>
+</blockquote>
+<h2 id="2.1" class="nutshell">git add 添加文件到缓存</h2>
+<p>在 Git 中，在提交你修改的文件之前，你需要把它们添加到缓存。如果该文件是新创建的，你可以执行&nbsp;<code>git add</code>&nbsp;将该文件添加到缓存，但是，即使该文件已经被追踪了 —— 也就是说，曾经提交过了 —— 你仍然需要执行&nbsp;git add 将新更改的文件添加到缓存去。让我们看几个例子：</p>
+<p>回到我们的 Hello World 示例，初始化该项目之后，我们就要用&nbsp;<code>git add</code>&nbsp;将我们的文件添加进去了。 我们可以用&nbsp;<code>git status</code>&nbsp;看看我们的项目的当前状态。</p>
+<pre><b>$ git status -s</b>
+<span class="red" style="color: #dd3333;">??</span> README
+<span class="red" style="color: #dd3333;">??</span> hello.rb
+</pre>
+<p>我们有俩尚未被追踪的文件，得添加一下。</p>
+<pre><b>$ git add README hello.rb</b>
+</pre>
+<p>现在我们再执行&nbsp;<code>git status</code>，就可以看到这俩文件已经加上去了。</p>
+<pre><b>$ git status -s</b>
+<span class="green" style="color: #338833;">A</span>  README
+<span class="green" style="color: #338833;">A</span>  hello.rb
+</pre>
+<p class="aside">新项目中，添加所有文件很普遍，可以在当前工作目录执行命令：<code>git add .</code>。 因为 Git 会递归地将你执行命令时所在的目录中的所有文件添加上去，所以如果你将当前的工作目录作为参数， 它就会追踪那儿的所有文件了。如此，<code>git add .</code>&nbsp;就和&nbsp;<code>git add README hello.rb</code>&nbsp;有一样的效果。 此外，效果一致的还有&nbsp;<code>git add *</code>，不过那只是因为我们这还木有子目录，不需要递归地添加新文件。</p>
+<p>好了，现在我们改个文件，再跑一下&nbsp;<code>git status</code>，有点古怪。</p>
+<pre><b>$ vim README</b>
+<b>$ git status -s</b>
+<span class="green" style="color: #338833;">A</span><span class="red" style="color: #dd3333;">M</span> README
+<span class="green" style="color: #338833;">A</span>  hello.rb
+</pre>
+<p>“AM” 状态的意思是，这个文件在我们将它添加到缓存之后又有改动。这意味着如果我们现在提交快照， 我们记录的将是上次跑&nbsp;<code>git add</code>&nbsp;的时候的文件版本，而不是现在在磁盘中的这个。 Git 并不认为磁盘中的文件与你想快照的文件必须是一致的 —— （如果你需要它们一致，）得用&nbsp;<code>git add</code>&nbsp;命令告诉它。</p>
+<blockquote>
+<p class="nutshell"><strong>一言以蔽之</strong>， 当你要将你的修改包含在即将提交的快照里的时候，执行&nbsp;<code>git add</code>。 任何你没有添加的改动都不会被包含在内 —— 这意味着你可以比绝大多数其他源代码版本控制系统更精确地归置你的快照。</p>
+</blockquote>
+<p>请查看《Pro Git》中&nbsp;<code>git add</code>&nbsp;的 “-p” 参数，以了解更多关于提交文件的灵活性的例子。</p>
+<h2 id="2.2">git status 查看你的文件在工作目录与缓存的状态</h2>
+<p>正如你在&nbsp;<code>git add</code>&nbsp;小节中所看到的，你可以执行&nbsp;<code>git status</code>&nbsp;命令查看你的代码在缓存与当前工作目录的状态。我演示该命令的时候加了&nbsp;<code>-s</code>&nbsp;参数，以获得简短的结果输出。 若没有这个标记，命令&nbsp;<code>git status</code>&nbsp;将告诉你更多的提示与上下文欣喜。 以下便是同样状态下，有跟没有&nbsp;<code>-s</code>&nbsp;参数的输出对比。简短的输出如下：</p>
+<pre><b>$ git status -s</b>
+<span class="green" style="color: #338833;">A</span><span class="red" style="color: #dd3333;">M</span> README
+<span class="green" style="color: #338833;">A</span>  hello.rb
+</pre>
+<p>而同样的状态，详细的输出看起来是这样的：</p>
+<pre><b>$ git status</b>
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached &lt;file&gt;..." to unstage)
+#
+# <span class="green" style="color: #338833;">new file:   README</span>
+# <span class="green" style="color: #338833;">new file:   hello.rb</span>
+#
+# Changed but not updated:
+#   (use "git add &lt;file&gt;..." to update what will be committed)
+#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+#
+# <span class="red" style="color: #dd3333;">modified:   README</span>
+#
+</pre>
+<p>你很容易发现简短的输出看起来很紧凑。而详细输出则很有帮助，提示你可以用何种命令完成你接下来可能要做的事情。</p>
+<p>Git 还会告诉你在你上次提交之后，有哪些文件被删除、修改或者存入缓存了。</p>
+<pre><b>$ git status -s</b>
+<span class="green" style="color: #338833;">M</span>  README
+ <span class="red" style="color: #dd3333;">D</span> hello.rb
+</pre>
+<p>你可以看到，在简短输出中，有两栏。第一栏是缓存的，第二栏则是工作目录的。 所以假设你临时提交了 README 文件，然后又改了些，并且没有执行&nbsp;<code>git add</code>，你会看到这个：</p>
+<pre><b>$ git status -s</b>
+<span class="green" style="color: #338833;">M</span><span class="red" style="color: #dd3333;">M</span> README
+ <span class="red" style="color: #dd3333;">D</span> hello.rb
+</pre>
+<blockquote>
+<p class="nutshell"><strong>一言以蔽之</strong>，执行&nbsp;<code>git status</code>&nbsp;以查看在你上次提交之后有啥被修改或者临时提交了， 从而决定自己是否需要提交一次快照，同时也能知道有什么改变被记录进去了。</p>
+</blockquote>
+<h2 id="2.3" class="nutshell">git diff 显示已写入缓存与已修改但尚未写入缓存的改动的区别</h2>
+<p><code>git diff</code>&nbsp;有两个主要的应用场景。我们将在此介绍其一， 在&nbsp;<a title="" data-original-title="" style="font-weight: bold; color: #000000;" href="http://gitref.org/inspect">检阅与对照</a>&nbsp;一章中，我们将介绍其二。 我们这里介绍的方式是用此命令描述已临时提交的或者已修改但尚未提交的改动。</p>
+<h4 style="color: #883333;">git diff&nbsp;<small style="color: #888888;">#尚未缓存的改动</small></h4>
+<p>如果没有其他参数，<code>git diff</code>&nbsp;会以规范化的 diff 格式（一个补丁）显示自从你上次提交快照之后尚未缓存的所有更改。</p>
+<pre><b>$ vim hello.rb</b>
+<b>$ git status -s</b>
+ <span class="red" style="color: #dd3333;">M</span> hello.rb
+<b>$ git diff</b>
+<span class="umber" style="color: #8a3324;">diff --git a/hello.rb b/hello.rb
+index d62ac43..8d15d50 100644
+--- a/hello.rb
++++ b/hello.rb</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,7 +1,7 @@</span>
+ class HelloWorld
+
+   def self.hello
+<span class="red" style="color: #dd3333;">-    puts "hello world"</span>
+<span class="green" style="color: #338833;">+    puts "hola mundo"</span>
+   end
+
+ end
+</pre>
+<p>所以，<code>git status</code>显示你上次提交更新至后所更改或者写入缓存的改动， 而&nbsp;<code>git diff</code>&nbsp;一行一行地显示这些改动具体是啥。 通常执行完&nbsp;<code>git status</code>&nbsp;之后接着跑一下&nbsp;<code>git diff</code>&nbsp;是个好习惯。</p>
+<h4 style="color: #883333;">git diff –cached&nbsp;<small style="color: #888888;">#查看已缓存的改动</small></h4>
+<p><code>git diff --cached</code>&nbsp;命令会告诉你有哪些内容已经写入缓存了。 也就是说，此命令显示的是接下来要写入快照的内容。所以，如果你将上述示例中的&nbsp;<code>hello.rb</code>&nbsp;写入缓存，因为&nbsp;<code>git diff</code>显示的是尚未缓存的改动，所以在此执行它不会显示任何信息。</p>
+<pre><b>$ git status -s</b>
+ <span class="red" style="color: #dd3333;">M</span> hello.rb
+<b>$ git add hello.rb </b>
+<b>$ git status -s</b>
+<span class="green" style="color: #338833;">M</span>  hello.rb
+<b>$ git diff</b>
+<b>$ </b>
+</pre>
+<p>如果你想看看已缓存的改动，你需要执行的是&nbsp;<code>git diff --cached</code>。</p>
+<pre><b>$ git status -s</b>
+<span class="green" style="color: #338833;">M</span>  hello.rb
+<b>$ git diff</b>
+<b>$ </b>
+<b>$ git diff --cached</b>
+<span class="umber" style="color: #8a3324;">diff --git a/hello.rb b/hello.rb
+index d62ac43..8d15d50 100644
+--- a/hello.rb
++++ b/hello.rb</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,7 +1,7 @@</span>
+ class HelloWorld
+
+   def self.hello
+<span class="red" style="color: #dd3333;">-    puts "hello world"</span>
+<span class="green" style="color: #338833;">+    puts "hola mundo"</span>
+   end
+
+ end
+</pre>
+<h4 style="color: #883333;">git diff HEAD&nbsp;<small style="color: #888888;">查看已缓存的与未缓存的所有改动</small></h4>
+<p>如果你想一并查看已缓存的与未缓存的改动，可以执行&nbsp;<code>git diff HEAD</code>&nbsp;—— 也就是说你要看到的是工作目录与上一次提交的更新的区别，无视缓存。 假设我们又改了些&nbsp;<code>ruby.rb</code>&nbsp;的内容，那缓存的与未缓存的改动我们就都有了。 以上三个&nbsp;<code>diff</code>&nbsp;命令的结果如下：</p>
+<pre><b>$ vim hello.rb </b>
+<b>$ git diff</b>
+<span class="umber" style="color: #8a3324;">diff --git a/hello.rb b/hello.rb
+index 4f40006..2ae9ba4 100644
+--- a/hello.rb
++++ b/hello.rb</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,7 +1,7 @@</span>
+ class HelloWorld
+
+<span class="green" style="color: #338833;">+  # says hello</span>
+   def self.hello
+     puts "hola mundo"
+   end
+
+ end
+<b>$ git diff --cached</b>
+<span class="umber" style="color: #8a3324;">diff --git a/hello.rb b/hello.rb
+index 2aabb6e..4f40006 100644
+--- a/hello.rb
++++ b/hello.rb</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,7 +1,7 @@</span>
+ class HelloWorld
+
+   def self.hello
+<span class="red" style="color: #dd3333;">-    puts "hello world"</span>
+<span class="green" style="color: #338833;">+    puts "hola mundo"</span>
+   end
+
+ end
+<b>$ git diff HEAD</b>
+<span class="umber" style="color: #8a3324;">diff --git a/hello.rb b/hello.rb
+index 2aabb6e..2ae9ba4 100644
+--- a/hello.rb
++++ b/hello.rb</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,7 +1,8 @@</span>
+ class HelloWorld
+
+<span class="green" style="color: #338833;">+  # says hello</span>
+   def self.hello
+<span class="red" style="color: #dd3333;">-    puts "hello world"</span>
+<span class="green" style="color: #338833;">+    puts "hola mundo"</span>
+   end
+
+ end
+</pre>
+<h4 style="color: #883333;">git diff –stat&nbsp;<small style="color: #888888;">显示摘要而非整个 diff</small></h4>
+<p>如果我们不想要看整个 diff 输出，但是又想比&nbsp;<code>git status</code>&nbsp;详细点， 就可以用&nbsp;<code>--stat</code>&nbsp;选项。该选项使它显示摘要而非全文。上文示例在使用&nbsp;<code>--stat</code>&nbsp;选项时，输出如下：</p>
+<pre><b>$ git status -s</b>
+<span class="green" style="color: #338833;">M</span><span class="red" style="color: #dd3333;">M</span> hello.rb
+<b>$ git diff --stat</b>
+ hello.rb |    1 <span class="green" style="color: #338833;">+</span>
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+<b>$ git diff --cached --stat</b>
+ hello.rb |    2 <span class="green" style="color: #338833;">+</span><span class="red" style="color: #dd3333;">-</span>
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+<b>$ git diff HEAD --stat</b>
+ hello.rb |    3 <span class="green" style="color: #338833;">++</span><span class="red" style="color: #dd3333;">-</span>
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+</pre>
+<p>你还可以在上述命令后面制定一个目录，从而只查看特定文件或子目录的&nbsp;<code>diff</code>&nbsp;输出。</p>
+<blockquote>
+<p class="nutshell"><strong>简而言之</strong>， 执行&nbsp;<code>git diff</code>&nbsp;来查看执行&nbsp;<code>git status</code>&nbsp;的结果的详细信息 —— 一行一行地显示这些文件是如何被修改或写入缓存的。</p>
+</blockquote>
+<h2 id="2.4" class="nutshell">git commit 记录缓存内容的快照</h2>
+<p>现在你使用&nbsp;<code>git add</code>&nbsp;命令将想要快照的内容写入了缓存， 执行&nbsp;<code>git commit</code>&nbsp;就将它实际存储快照了。 Git 为你的每一个提交都记录你的名字与电子邮箱地址，所以第一步是告诉 Git 这些都是啥。</p>
+<pre><b>$ git config --global user.name 'Your Name'</b>
+<b>$ git config --global user.email you@somedomain.com</b>
+</pre>
+<p>让我们写入缓存，并提交对&nbsp;<code>hello.rb</code>&nbsp;的所有改动。在首个例子中，我们使用&nbsp;<code>-m</code>&nbsp;选项以在命令行中提供提交注释。</p>
+<pre><b>$ git add hello.rb </b>
+<b>$ git status -s</b>
+<span class="green" style="color: #338833;">M</span>  hello.rb
+<b>$ git commit -m 'my hola mundo changes'</b>
+[master 68aa034] my hola mundo changes
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+</pre>
+<p>现在我们已经记录了快照。如果我们再执行&nbsp;<code>git status</code>，会看到我们有一个“干净的工作目录”。 这意味着我们在最近一次提交之后，没有做任何改动 —— 在我们的项目中没有未快照的工作。</p>
+<pre><b>$ git status</b>
+# On branch master
+nothing to commit (working directory clean)
+</pre>
+<p>如果你漏掉了&nbsp;<code>-m</code>&nbsp;选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开&nbsp;<code>vim</code>。屏幕会像这样：</p>
+<pre># Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+# modified:   hello.rb
+#
+~
+~
+".git/COMMIT_EDITMSG" 9L, 257C
+</pre>
+<p>在此，你在文件头部添加实际的提交信息。以“#”开头的行都会被无视 ——Git 将&nbsp;<code>git status</code>&nbsp;的输出结果放在那儿以提示你都改了、缓存了啥。</p>
+<p>通常，撰写良好的提交信息是很重要的。以开放源代码项目为例，多多少少以以下格式写你的提示消息是个不成文的规定：</p>
+<pre>简短的关于改动的总结（25个字或者更少）
+
+如果有必要，更详细的解释文字。约 36 字时换行。在某些情况下，
+第一行会被作为电子邮件的开头，而剩余的则会作为邮件内容。
+将小结从内容隔开的空行是至关重要的（除非你没有内容）；
+如果这两个待在一起，有些 git 工具会犯迷糊。
+
+空行之后是更多的段落。
+
+ - 列表也可以
+
+ - 通常使用连字符（-）或者星号（*）来标记列表，前面有个空格，
+   在列表项之间有空行，不过这些约定也会有些变化。
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+# modified:   hello.rb
+#
+~
+~
+~
+".git/COMMIT_EDITMSG" 25L, 884C written
+</pre>
+<p class="aside">提交注解是很重要的。因为 Git 很大一部分能耐就是它在组织本地提交和与他人分享的弹性， 
+它很给力地能够让你为逻辑独立的改变写三到四条提交注解，以便你的工作被同仁审阅。因为提交与推送改动是有区别的， 
+请务必花时间将各个逻辑独立的改动放到另外一个提交，并附上一份良好的提交注解， 以使与你合作的人能够方便地了解你所做的，以及你为何要这么做。</p>
+<h4 style="color: #883333;">git commit -a&nbsp;<small style="color: #888888;">自动将在提交前将已记录、修改的文件放入缓存区</small></h4>
+<p>如果你觉得&nbsp;<code>git add</code>&nbsp;提交缓存的流程太过繁琐，Git 也允许你用&nbsp;<code>-a</code>&nbsp;选项跳过这一步。 基本上这句话的意思就是，为任何已有记录的文件执行&nbsp;<code>git add</code>&nbsp;—— 也就是说，任何在你最近的提交中已经存在，并且之后被修改的文件。 这让你能够用更 Subversion 方式的流程，修改些文件，然后想要快照所有所做的改动的时候执行&nbsp;<code>git commit -a</code>。 不过你仍然需要执行&nbsp;<code>git add</code>&nbsp;来添加新文件，就像 Subversion 一样。</p>
+<pre><b>$ vim hello.rb</b>
+<b>$ git status -s</b>
+ <span class="red" style="color: #dd3333;">M</span>  hello.rb
+<b>$ git commit -m 'changes to hello file'</b>
+# On branch master
+# Changed but not updated:
+#   (use "git add &lt;file&gt;..." to update what will be committed)
+#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+#
+# modified:   hello.rb
+#
+<span class="hl">no changes added to commit (use "git add" and/or "git commit -a")</span>
+<b>$ git commit -am 'changes to hello file'</b>
+[master 78b2670] changes to hello file
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+</pre>
+<p>注意，如果你不缓存改动，直接执行&nbsp;<code>git commit</code>，Git 会直接给出&nbsp;<code>git status</code>&nbsp;命令的输出，提醒你啥也没缓存。我已将该消息中的重要部分高亮，它说没有添加需要提交的缓存。 如果你使用&nbsp;<code>-a</code>，它会缓存并提交每个改动（不含新文件）。</p>
+<p>现在你就完成了整个快照的流程 ——改些文件，然后用&nbsp;<code>git add</code>&nbsp;将要提交的改动提交到缓存， 用&nbsp;<code>git status</code>&nbsp;和&nbsp;<code>git diff</code>&nbsp;看看你都改了啥，最后&nbsp;<code>git commit</code>&nbsp;永久地保存快照。</p>
+<blockquote>
+<p class="nutshell"><strong>简而言之</strong>，执行&nbsp;<code>git commit</code>&nbsp;记录缓存区的快照。如果需要的话，这个快照可以用来做比较、共享以及恢复。</p>
+</blockquote>
+<h2 id="2.5" class="nutshell">git reset HEAD 取消缓存已缓存的内容</h2>
+<p><code>git reset</code>&nbsp;可能是人类写的最费解的命令了。 我用 Git 有些年头了，甚至还写了本书，但有的时候还是会搞不清它会做什么。 所以，我只说三个明确的，通常有用的调用。请你跟我一样尽管用它 —— 因为它可以很有用。</p>
+<p>在此例中，我们可以用它来将不小心缓存的东东取消缓存。假设你修改了两个文件，想要将它们记录到两个不同的提交中去。 你应该缓存并提交一个，再缓存并提交另外一个。如果你不小心两个都缓存了，那要如何才能<i>取消</i>缓存呢？ 你可以用&nbsp;<code>git reset HEAD -- file</code>。 技术上说，在这里你不需要使用&nbsp;<code>--</code>&nbsp;—— 它用来告诉 Git 这时你已经不再列选项，剩下的是文件路径了。 不过养成使用它分隔选项与路径的习惯很重要，即使在你可能并不需要的时候。</p>
+<p>好，让我们看看取消缓存是什么样子的。这里我们有两个最近提交之后又有所改动的文件。我们将两个都缓存，并取消缓存其中一个。</p>
+<pre><b>$ git status -s</b>
+ <span class="red" style="color: #dd3333;">M</span> README
+ <span class="red" style="color: #dd3333;">M</span> hello.rb
+<b>$ git add .</b>
+<b>$ git status -s</b>
+<span class="green" style="color: #338833;">M</span>  README
+<span class="green" style="color: #338833;">M</span>  hello.rb
+<b>$ git reset HEAD -- hello.rb </b>
+Unstaged changes after reset:
+M hello.rb
+<b>$ git status -s</b>
+<span class="green" style="color: #338833;">M</span>  README
+ <span class="red" style="color: #dd3333;">M</span> hello.rb
+</pre>
+<p>现在你执行&nbsp;<code>git commit</code>&nbsp;将只记录&nbsp;<code>README</code>&nbsp;文件的改动，并不含现在并不在缓存中的&nbsp;<code>hello.rb</code>。</p>
+<p class="aside">如果你好奇，它实际的操作是将该文件在“索引”中的校验和重置为最近一次提交中的值。&nbsp;<code>git add</code>&nbsp;会计算一个文件的校验和，将它添加到“索引”中， 而&nbsp;<code>git reset HEAD</code>&nbsp;将它改写回原先的，从而取消缓存操作。</p>
+<p class="tip">如果你想直接执行&nbsp;<code>git unstage</code>，你可以在 Git 中配置个别名。 执行&nbsp;<code>git config --global alias.unstage "reset HEAD"</code>&nbsp;即可。 一旦执行完它，你就可以直接用&nbsp;<code>git unstage [file]</code>作为代替了。</p>
+<p>如果你忘了取消缓存的命令，Git 的常规&nbsp;<code>git status</code>&nbsp;输出的提示会很有帮助。 例如，在你有已缓存的文件时，如果你不带&nbsp;<code>-s</code>&nbsp;执行&nbsp;<code>git status</code>，它将告诉你怎样取消缓存：</p>
+<pre><b>$ git status</b>
+# On branch master
+# Changes to be committed:
+#   <span class="hl">(use "git reset HEAD &lt;file&gt;..." to unstage)</span>
+#
+#   <span class="green" style="color: #338833;">modified:   README</span>
+#   <span class="green" style="color: #338833;">modified:   hello.rb</span>
+#
+</pre>
+<blockquote>
+<p class="nutshell"><strong>简而言之</strong>，执行&nbsp;<code>git reset HEAD</code>&nbsp;以取消之前&nbsp;<code>git add</code>&nbsp;添加，但不希望包含在下一提交快照中的缓存。</p>
+</blockquote>
+<h2 id="2.6" class="nutshell">git rm 将文件从缓存区移除</h2>
+<p><code>git rm</code>&nbsp;会将条目从缓存区中移除。这与&nbsp;<code>git reset HEAD</code>&nbsp;将条目取消缓存是有区别的。 “取消缓存”的意思就是将缓存区恢复为我们做出修改之前的样子。 在另一方面，<code>git rm</code>&nbsp;则将该文件彻底从缓存区踢出，因此它不再下一个提交快照之内，进而有效地删除它。</p>
+<p>默认情况下，<code>git rm file</code>&nbsp;会将文件从缓存区和你的硬盘中（工作目录）删除。 如果要在工作目录中留着该文件，可以使用&nbsp;<code>git rm --cached</code></p>
+<h4 style="color: #883333;">git mv&nbsp;<small style="color: #888888;">git rm –cached orig; mv orig new; git add new</small></h4>
+<p>不像绝大多数其他版本控制系统，Git 并不记录记录文件重命名。它反而只记录快照，并对比快照以找到有啥文件可能被重命名了。 
+如果一个文件从更新中删除了，而在下次快照中新添加的另一个文件的内容与它很相似，Git 就知道这极有可能是个重命名。 因此，虽然有&nbsp;<code>git mv</code>&nbsp;命令，但它有点多余 —— 它做得所有事情就是&nbsp;<code>git rm --cached</code>， 重命名磁盘上的文件，然后再执行&nbsp;<code>git add</code>&nbsp;把新文件添加到缓存区。 你并不需要用它，不过如果觉得这样容易些，尽管用吧。</p>
+<p class="aside">我自己并不使用此命令的普通形式 —— 删除文件。通常直接从硬盘删除文件，然后执行&nbsp;<code>git commit -a</code>&nbsp;会简单些。 它会自动将删除的文件从索引中移除。</p>
+<blockquote>
+<p class="nutshell"><strong>简而言之</strong>， 执行&nbsp;<code>git rm</code>&nbsp;来删除 Git 追踪的文件。它还会删除你的工作目录中的相应文件。</p>
+</blockquote>
+<h1 id="3" class="nutshell" style="text-align: center;">三、分支与合并</h1>
+<p>分支是我最喜欢的 Git 特性之一。如果你用过其他版本控制系统，把你所知的分支给忘记，倒可能更有帮助些 —— 事实上，以我们使用分支的方式，把 Git 的分支看作&nbsp;<i>上下文</i>&nbsp;反而更合适。 当你检出分支时，你可以在两三个不同的分支之间来回切换。</p>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>，你可以执行&nbsp;<code>git branch (branchname)</code>&nbsp;来创建分支， 使用&nbsp;<code>git checkout (branchname)</code>&nbsp;命令切换到该分支，在该分支的上下文环境中， 提交快照等，之后可以很容易地来回切换。当你切换分支的时候，Git 会用该分支的最后提交的快照替换你的工作目录的内容， 所以多个分支不需要多个目录。使用&nbsp;<code>git merge</code>&nbsp;来合并分支。你可以多次合并到统一分支， 也可以选择在合并之后直接删除被并入的分支。</p>
+</blockquote>
+<h2 id="3.1" class="nutshell">git branch 列出、创建与管理工作上下文 &nbsp; &nbsp;<a title="" data-original-title="" id="3.2"></a>git checkout 切换到新的分支上下文</h2>
+<p><code>git branch</code>&nbsp;命令是 Git 中的通用分支管理工具，可以通过它完成多项任务。 我们先说你会用到的最多的命令 —— 列出分支、创建分支和删除分支。 我们还会介绍用来切换分支的&nbsp;<code>git checkout</code>&nbsp;命令。</p>
+<h4 style="color: #883333;">git branch&nbsp;<small style="color: #888888;">列出可用的分支</small></h4>
+<p>没有参数时，<code>git branch</code>&nbsp;会列出你在本地的分支。你所在的分支的行首会有个星号作标记。 如果你开启了<a title="" data-original-title="" style="font-weight: bold; color: #000000;" href="http://git-scm.com/book/en/Customizing-Git-Git-Configuration#Colors-in-Git">彩色模式</a>，当前分支会用绿色显示。</p>
+<pre>$ git branch
+* <span class="green" style="color: #338833;">master</span>
+</pre>
+<p>此例的意思就是，我们有一个叫做“master”的分支，并且该分支是当前分支。 当你执行&nbsp;<code>git init</code>&nbsp;的时候，缺省情况下 Git 就会为你创建“master”分支。 但是这名字一点特殊意味都没有 —— 事实上你并不非得要一个叫做“master”的分支。 不过由于它是缺省分支名的缘故，绝大部分项目都有这个分支。</p>
+<h4 style="color: #883333;">git branch (branchname)&nbsp;<small style="color: #888888;">创建新分支</small></h4>
+<p>我们动手创建一个分支，并切换过去。执行&nbsp;<code>git branch (branchname)</code>&nbsp;即可。</p>
+<pre>$ git branch testing
+$ git branch
+* <span class="green" style="color: #338833;">master</span>
+  testing
+</pre>
+<p>现在我们可以看到，有了一个新分支。当你以此方式在上次提交更新之后创建了新分支，如果后来又有更新提交， 
+然后又切换到了“testing”分支，Git 将还原你的工作目录到你创建分支时候的样子 —— 
+你可以把它看作一个记录你当前进度的书签。让我们实际运用看看 —— 我们用&nbsp;<code>git checkout (branch)</code>&nbsp;切换到我们要修改的分支。</p>
+<pre><b>$ ls</b>
+README   hello.rb
+<b>$ echo 'test content' &gt; test.txt</b>
+<b>$ echo 'more content' &gt; more.txt</b>
+<b>$ git add *.txt</b>
+<b>$ git commit -m 'added two files'</b>
+[master 8bd6d8b] added two files
+ 2 files changed, 2 insertions(+), 0 deletions(-)
+ create mode 100644 more.txt
+ create mode 100644 test.txt
+<b>$ ls</b>
+README   hello.rb more.txt test.txt
+<b>$ git checkout testing</b>
+Switched to branch 'testing'
+<b>$ ls</b>
+README   hello.rb
+</pre>
+<p>当我们切换到“测试”分支的时候，我们添加的新文件被移除了。切换回“master”分支的时候，它们有重新出现了。</p>
+<pre><b>$ ls</b>
+README   hello.rb
+<b>$ git checkout master</b>
+Switched to branch 'master'
+<b>$ ls</b>
+README   hello.rb more.txt test.txt
+</pre>
+<h4 style="color: #883333;">git checkout -b (branchname)&nbsp;<small style="color: #888888;">创建新分支，并立即切换到它</small></h4>
+<p>通常情况下，你会更希望立即切换到新分支，从而在该分支中操作，然后当此分支的开发日趋稳定时， 将它合并到稳定版本的分支（例如“master”）中去。 执行&nbsp;<code>git branch newbranch; git checkout newbranch</code>&nbsp;也很简单， 不过 Git 还为你提供了快捷方式：<code>git checkout -b newbranch</code>。</p>
+<pre><b>$ git branch</b>
+* master
+<b>$ ls</b>
+README   hello.rb more.txt test.txt
+<b>$ git checkout -b removals</b>
+Switched to a new branch 'removals'
+<b>$ git rm more.txt </b>
+rm 'more.txt'
+<b>$ git rm test.txt </b>
+rm 'test.txt'
+<b>$ ls</b>
+README   hello.rb
+<b>$ git commit -am 'removed useless files'</b>
+[removals 8f7c949] removed useless files
+ 2 files changed, 0 insertions(+), 2 deletions(-)
+ delete mode 100644 more.txt
+ delete mode 100644 test.txt
+<b>$ git checkout master</b>
+Switched to branch 'master'
+<b>$ ls</b>
+README   hello.rb more.txt test.txt
+</pre>
+<p>如你所见，我们创建了一个分支，在该分支的上下文中移除了一些文件，然后切换回我们的主分支，那些文件又回来了。 使用分支将工作切分开来，从而让我们能够在不同上下文中做事，并来回切换。</p>
+<p>创建新分支，在其中完成一部分工作，完成之后将它合并到主分支并删除。你会觉得这很方便，因为这么做很快很容易。 
+如此，当你觉得这部分工作并不靠谱，舍弃它很容易。并且，如果你必须回到稳定分支做些事情， 
+也可以很方便地这个独立分支的工作先丢在一边，完成要事之后再切换回来。</p>
+<h4 style="color: #883333;">git branch -d (branchname)&nbsp;<small style="color: #888888;">删除分支</small></h4>
+<p>假设我们要删除一个分支（比如上例中的“testing”分支，该分支没啥特殊的内容了）， 可以执行&nbsp;<code>git branch -d (branch)</code>&nbsp;把它删掉。</p>
+<pre><b>$ git branch</b>
+* <span class="green" style="color: #338833;">master</span>
+  testing
+<b>$ git branch -d testing</b>
+Deleted branch testing (was 78b2670).
+<b>$ git branch</b>
+* <span class="green" style="color: #338833;">master</span>
+</pre>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>&nbsp;使用&nbsp;<code>git branch</code>&nbsp;列出现有的分支、创建新分支以及删除不必要或者已合并的分支。</p>
+</blockquote>
+<h2 id="3.3" class="nutshell">git merge 将分支合并到你的当前分支</h2>
+<p>一旦某分支有了独立内容，你终究会希望将它合并回到你的主分支。 你可以使用&nbsp;<code>git merge</code>&nbsp;
+命令将任何分支合并到当前分支中去。 我们那上例中的“removals”分支为例。假设我们创建了一个分支，移除了一些文件，并将它提交到该分支， 
+其实该分支是与我们的主分支（也就是“master”）独立开来的。 要想将这些移除操作包含在主分支中，你可以将“removals”分支合并回去。</p>
+<pre><b>$ git branch</b>
+* <span class="green" style="color: #338833;">master</span>
+  removals
+<b>$ ls</b>
+README   hello.rb more.txt test.txt
+<b>$ git merge removals</b>
+Updating 8bd6d8b..8f7c949
+Fast-forward
+ more.txt |    1 -
+ test.txt |    1 -
+ 2 files changed, 0 insertions(+), 2 deletions(-)
+ delete mode 100644 more.txt
+ delete mode 100644 test.txt
+<b>$ ls</b>
+<span class="hl">README   hello.rb</span>
+</pre>
+<h4 style="color: #883333;">更多复杂合并</h4>
+<p>当然，合并并不仅仅是简单的文件添加、移除的操作，Git 也会合并修改 —— 事实上，它很会合并修改。 举例，我们看看在某分支中编辑某个文件，然后在另一个分支中把它的名字改掉再做些修改， 最后将这俩分支合并起来。你觉得会变成一坨 shi？我们试试看。</p>
+<pre><b>$ git branch</b>
+* master
+<b>$ cat hello.rb </b>
+class HelloWorld
+  def self.hello
+    puts "Hello World"
+  end
+end
+
+HelloWorld.hello
+</pre>
+<p>首先，我们创建一个叫做“change_class”的分支，切换过去，从而将重命名类等操作独立出来。我们将类名从 “HelloWorld” 改为 “HiWorld”。</p>
+<pre><b>$ git checkout -b change_class</b>
+M hello.rb
+Switched to a new branch 'change_class'
+<b>$ vim hello.rb </b>
+<b>$ head -1 hello.rb </b>
+class HiWorld
+<b>$ git commit -am 'changed the class name'</b>
+[change_class 3467b0a] changed the class name
+ 1 files changed, 2 insertions(+), 4 deletions(-)
+</pre>
+<p>然后，将重命名类操作提交到 “change_class” 分支中。 现在，假如切换回 “master” 分支我们可以看到类名恢复到了我们切换到 “change_class” 分支之前的样子。 现在，再做些修改（即代码中的输出），同时将文件名从&nbsp;<code>hello.rb</code>&nbsp;改为&nbsp;<code>ruby.rb</code>。</p>
+<pre><b>$ git checkout master</b>
+Switched to branch 'master'
+<b>$ git mv hello.rb ruby.rb</b>
+<b>$ vim ruby.rb </b>
+<b>$ git diff</b>
+<span class="umber" style="color: #8a3324;">diff --git a/ruby.rb b/ruby.rb
+index 2aabb6e..bf64b17 100644
+--- a/ruby.rb
++++ b/ruby.rb</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,7 +1,7 @@</span>
+ class HelloWorld
+
+   def self.hello
+<span class="red" style="color: #dd3333;">-    puts "Hello World"</span>
+<span class="green" style="color: #338833;">+    puts "Hello World from Ruby"</span>
+   end
+
+ end
+<b>$ git commit -am 'added from ruby'</b>
+[master b7ae93b] added from ruby
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+ rename hello.rb =&gt; ruby.rb (65%)
+</pre>
+<p>现在这些改变已经记录到我的 “master” 分支了。请注意，这里类名还是 “HelloWorld”，而不是 “HiWorld”。 
+然后我想将类名的改变合并过来，我把 “change_class” 分支合并过来就行了。 但是，我已经将文件名都改掉了，Git 知道该怎么办么？</p>
+<pre><b>$ git branch</b>
+  change_class
+* master
+<b>$ git merge change_class</b>
+Renaming hello.rb =&gt; ruby.rb
+Auto-merging ruby.rb
+Merge made by recursive.
+ ruby.rb |    6 ++----
+ 1 files changed, 2 insertions(+), 4 deletions(-)
+<b>$ cat ruby.rb</b>
+class HiWorld
+  def self.hello
+    puts "Hello World from Ruby"
+  end
+end
+
+HiWorld.hello
+</pre>
+<p>不错，它就是发现了。请注意，在这部操作，我没有遇到合并冲突，并且文件已经重命名、类名也换掉了。挺酷。</p>
+<h4 style="color: #883333;">合并冲突</h4>
+<p>那么，Git 合并很有魔力，我们再也不用处理合并冲突了，对吗？不太确切。 不同分支中修改了相同区块的代码，电脑自己猜不透神马的情况下，冲突就摆在我们面前了。 我们看看两个分支中改了同一行代码的例子。</p>
+<pre><b>$ git branch</b>
+* master
+<b>$ git checkout -b fix_readme</b>
+Switched to a new branch 'fix_readme'
+<b>$ vim README </b>
+<b>$ git commit -am 'fixed readme title'</b>
+[fix_readme 3ac015d] fixed readme title
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+</pre>
+<p>我们在某分支中修改了 README 文件中的一行，并提交了。我们再在 “master” 分支中对同个文件的同一行内容作不同的修改。</p>
+<pre><b>$ git checkout master</b>
+Switched to branch 'master'
+<b>$ vim README </b>
+<b>$ git commit -am 'fixed readme title differently'</b>
+[master 3cbb6aa] fixed readme title differently
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+</pre>
+<p>有意思的来了 —— 我们将前一个分支合并到 “master” 分支，一个合并冲突就出现了。</p>
+<pre><b>$ git merge fix_readme</b>
+Auto-merging README
+CONFLICT (content): Merge conflict in README
+Automatic merge failed; fix conflicts and then commit the result.
+<b>$ cat README </b>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Many Hello World Examples
+=======
+Hello World Lang Examples
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; fix_readme
+
+This project has examples of hello world in
+nearly every programming language.
+</pre>
+<p>你可以看到，Git 在产生合并冲突的地方插入了标准的与 Subversion 很像的合并冲突标记。 轮到我们去解决这些冲突了。在这里我们就手动把它解决。如果你要 Git 打开一个图形化的合并工具， 可以看看&nbsp;<a title="" data-original-title="" style="font-weight: bold; color: #000000;" href="http://git-scm.com/docs/git-mergetool">git 合并工具</a>&nbsp;（比如 kdiff3、emerge、p4merge 等）。</p>
+<pre><b>$ vim README </b>  <span class="exp">here I'm fixing the conflict</span>
+<b>$ git diff</b>
+<span class="umber" style="color: #8a3324;">diff --cc README
+index 9103e27,69cad1a..0000000
+--- a/README
++++ b/README</span>
+<span class="lblue" style="color: #5555aa;">@@@ -1,4 -1,4 +1,4 @@@</span>
+<span class="red" style="color: #dd3333;">- Many Hello World Examples</span>
+ <span class="red" style="color: #dd3333;">-Hello World Lang Examples</span>
+<span class="green" style="color: #338833;">++Many Hello World Lang Examples</span>
+
+  This project has examples of hello world in
+</pre>
+<p>在 Git 中，处理合并冲突的时候有个很酷的提示。 如果你执行&nbsp;<code>git diff</code>，就像我演示的这样，它会告诉你冲突的两方，和你是如何解决的。 现在是时候把它标记为已解决了。在 Git 中，我们可以用&nbsp;<code>git add</code>&nbsp;—— 要告诉 Git 文件冲突已经解决，你必须把它写入缓存区。</p>
+<pre><b>$ git status -s</b>
+UU README
+<b>$ git add README </b>
+<b>$ git status -s</b>
+M  README
+<b>$ git commit </b>
+[master 8d585ea] Merge branch 'fix_readme'
+</pre>
+<p>现在我们成功解决了合并中的冲突，并提交了结果</p>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>&nbsp;使用&nbsp;<code>git merge</code>&nbsp;将另一个分支并入当前的分支中去。 Git 会自动以最佳方式将两个不同快照中独特的工作合并到一个新快照中去。</p>
+</blockquote>
+<h2 id="3.4" class="nutshell">git log 显示一个分支中提交的更改记录</h2>
+<p>到目前为止，我们已经提交快照到项目中，在不同的各自分离的上下文中切换， 但假如我们忘了自己是如何到目前这一步的那该怎么办？或者假如我们想知道此分支与彼分支到底有啥区别？ Git 提供了一个告诉你使你达成当前快照的所有提交消息的工具，叫做&nbsp;<code>git log</code>。</p>
+<p>要理解日志（log）命令，你需要了解当执行&nbsp;<code>git commit</code>&nbsp;以存储一个快照的时候，都有
+啥信息被保存了。 除了文件详单、提交消息和提交者的信息，Git 还保存了你的此次提交所基于的快照。 
+也就是，假如你克隆了一个项目，你是在什么快照的基础上做的修改而得到新保存的快照的？ 这有益于为项目进程提供上下文，使 Git 
+能够弄明白谁做了什么改动。 如果 Git 
+有你的快照所基于的快照的话，它就能自动判断你都改变了什么。而新提交所基于的提交，被称作新提交的“父亲”。</p>
+<p>某分支的按时间排序的“父亲”列表，当你在该分支时，可以执行&nbsp;<code>git log</code>&nbsp;以查看。 例如，如果我们在本章中操作的 Hello World 项目中执行&nbsp;<code>git log</code>，我们可以看到已提交的消息。</p>
+<pre><b>$ git log</b>
+<span class="yellow" style="color: #999933;">commit 8d585ea6faf99facd39b55d6f6a3b3f481ad0d3d</span>
+Merge: 3cbb6aa 3ac015d
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri Jun 4 12:59:47 2010 +0200
+
+    Merge branch 'fix_readme'
+
+    Conflicts:
+        README
+
+<span class="yellow" style="color: #999933;">commit 3cbb6aae5c0cbd711c098e113ae436801371c95e</span>
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri Jun 4 12:58:53 2010 +0200
+
+    fixed readme title differently
+
+<span class="yellow" style="color: #999933;">commit 3ac015da8ade34d4c7ebeffa2053fcac33fb495b</span>
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri Jun 4 12:58:36 2010 +0200
+
+    fixed readme title
+
+<span class="yellow" style="color: #999933;">commit 558151a95567ba4181bab5746bc8f34bd87143d6</span>
+Merge: b7ae93b 3467b0a
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri Jun 4 12:37:05 2010 +0200
+
+    Merge branch 'change_class'
+...
+</pre>
+<p>我们可以用&nbsp;<code>--oneline</code>&nbsp;选项来查看历史记录的紧凑简洁的版本。</p>
+<pre><b>$ git log --oneline</b>
+8d585ea Merge branch 'fix_readme'
+3cbb6aa fixed readme title differently
+3ac015d fixed readme title
+558151a Merge branch 'change_class'
+b7ae93b added from ruby
+3467b0a changed the class name
+17f4acf first commit
+</pre>
+<p>这告诉我们的是，此项目的开发历史。如果提交消息描述性很好，这就能为我们提供关于有啥改动被应用、或者影响了当前快照的状态、以及这快照里头都有啥。</p>
+<p>我们还可以用它的十分有帮助的&nbsp;<code>--graph</code>&nbsp;选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项：</p>
+<pre><b>$ git log --oneline --graph</b>
+*   8d585ea Merge branch 'fix_readme'
+|\
+| * 3ac015d fixed readme title
+* | 3cbb6aa fixed readme title differently
+|/
+*   558151a Merge branch 'change_class'
+|\
+| * 3467b0a changed the class name
+* | b7ae93b added from ruby
+|/
+* 17f4acf first commit
+</pre>
+<p>现在我们可以更清楚明了地看到何时工作分叉、又何时归并。 这对查看发生了什么、应用了什么改变很有帮助，并且极大地帮助你管理你的分支。 让我们创建一个分支，在里头做些事情，然后切回到主分支，也做点事情，然后看看&nbsp;<code>log</code>&nbsp;命令是如何帮助我们理清这俩分支上都发生了啥的。</p>
+<p>首先我们创建一个分支，来添加 Erlang 编程语言的 Hello World 示例 —— 我们想要在一个分支里头做这个，以避免让可能还不能工作的代码弄乱我们的稳定分支。 这样就可以切来切去，片叶不沾身。</p>
+<pre><b>$ git checkout -b erlang</b>
+Switched to a new branch 'erlang'
+<b>$ vim erlang_hw.erl</b>
+<b>$ git add erlang_hw.erl </b>
+<b>$ git commit -m 'added erlang'</b>
+[erlang ab5ab4c] added erlang
+ 1 files changed, 5 insertions(+), 0 deletions(-)
+ create mode 100644 erlang_hw.erl
+</pre>
+<p>由于我们玩函数式编程很开心，以至于沉迷其中，又在“erlang”分支中添加了一个 Haskell 的示例程序。</p>
+<pre><b>$ vim haskell.hs</b>
+<b>$ git add haskell.hs </b>
+<b>$ git commit -m 'added haskell'</b>
+[erlang 1834130] added haskell
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+ create mode 100644 haskell.hs
+</pre>
+<p>最后，我们决定还是把 Ruby 程序的类名改回原先的样子。与其创建另一个分支，我们可以返回主分支，改变它，然后直接提交。</p>
+<pre><b>$ git checkout master</b>
+Switched to branch 'master'
+<b>$ ls</b>
+README  ruby.rb
+<b>$ vim ruby.rb </b>
+<b>$ git commit -am 'reverted to old class name'</b>
+[master 594f90b] reverted to old class name
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+</pre>
+<p>现在假设我们有段时间不做这个项目了，我们做别的去了。 当我们回来的时候，我们想知道“erlang”分支都是啥，而主分支的进度又是怎样。 仅仅看分支的名字，我们是无从知道自己还在里面有 Haskell 的改动的，但是用&nbsp;<code>git log</code>&nbsp;我们就可以。 如果你在命令行中提供一个分支名字，它就会显示该分支历史中“可及”的提交，即从该分支创立起可追溯的影响了最终的快照的提交。</p>
+<pre><b>$ git log --oneline erlang</b>
+<span class="hl">1834130 added haskell</span>
+ab5ab4c added erlang
+8d585ea Merge branch 'fix_readme'
+3cbb6aa fixed readme title differently
+3ac015d fixed readme title
+558151a Merge branch 'change_class'
+b7ae93b added from ruby
+3467b0a changed the class name
+17f4acf first commit
+</pre>
+<p>如此，我们很容易就看到分支里头还包括了 Haskell 代码（高亮显示了）。 更酷的是，我们很容易地告诉 Git，我们只对某个分支中可及的提交感兴趣。换句话说，某分支中与其他分支相比唯一的提交。</p>
+<p>在此例中，如果我们想要合并“erlang”分支，我们需要看当合并的时候，都有啥提交会作用到我们的快照上去。 我们告诉 Git 的方式是，在不想要看到的分支前放一个&nbsp;<code>^</code>。 例如，如果我们想要看“erlang”分支中但不在主分支中的提交，我们可以用&nbsp;<code>erlang ^master</code>，或者反之。</p>
+<pre><b>$ git log --oneline erlang ^master</b>
+1834130 added haskell
+ab5ab4c added erlang
+<b>$ git log --oneline master ^erlang</b>
+594f90b reverted to old class name
+</pre>
+<p>这为我们提供了一个良好的、简易的分支管理工具。它使我们能够非常容易地查看对某个分支唯一的提交，从而知道我们缺少什么，以及当我们要合并时，会有什么被合并进去。</p>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>&nbsp;使用&nbsp;<code>git log</code>&nbsp;列出促成当前分支目前的快照的提交历史记录。这使你能够看到项目是如何到达现在的状况的。</p>
+</blockquote>
+<h2 id="3.5" class="nutshell">git tag 给历史记录中的某个重要的一点打上标签</h2>
+<p>如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用&nbsp;<code>git tag</code>&nbsp;给它打上标签。 该&nbsp;<code>tag</code>&nbsp;命令基本上会给该特殊提交打上永久的书签，从而使你在将来能够用它与其他提交比较。 通常，你会在切取一个发布版本或者交付一些东西的时候打个标签。</p>
+<p>比如说，我们想为我们的 Hello World 项目发布一个“1.0”版本。 我们可以用&nbsp;<code>git tag -a v1.0</code>&nbsp;命令给最新一次提交打上（<code>HEAD</code>）“v1.0”的标签。&nbsp;<code>-a</code>&nbsp;选项意为“创建一个带注解的标签”，从而使你为标签添加注解。绝大部分时候都会这么做的。 不用&nbsp;<code>-a</code>&nbsp;选项也可以执行的，但它不会记录这标签是啥时候打的，谁打的，也不会让你添加个标签的注解。 我推荐一直创建带注解的标签。</p>
+<pre><b>$ git tag -a v1.0 </b>
+</pre>
+<p>当你执行&nbsp;<code>git tag -a</code>&nbsp;命令时，Git 会打开你的编辑器，让你写一句标签注解，就像你给提交写注解一样。</p>
+<p>现在，注意当我们执行&nbsp;<code>git log --decorate</code>&nbsp;时，我们可以看到我们的标签了：</p>
+<pre><b>$ git log --oneline --decorate --graph</b>
+* 594f90b (HEAD, <span class="hl">tag: v1.0</span>, master) reverted to old class name
+*   8d585ea Merge branch 'fix_readme'
+|\
+| * 3ac015d (fix_readme) fixed readme title
+* | 3cbb6aa fixed readme title differently
+|/
+*   558151a Merge branch 'change_class'
+|\
+| * 3467b0a changed the class name
+* | b7ae93b added from ruby
+|/
+* 17f4acf first commit
+</pre>
+<p>如果我们有新提交，该标签依然会待在该提交的边上，所以我们已经给那个特定快照永久打上标签，并且能够将它与未来的快照做比较。</p>
+<p>不过我们并不需要给当前提交打标签。如果我们忘了给某个提交打标签，又将它发布了，我们可以给它追加标签。 在相同的命令末尾加上提交的 SHA，执行，就可以了。 例如，假设我们发布了提交&nbsp;<code>558151a</code>（几个提交之前的事情了），但是那时候忘了给它打标签。 我们现在也可以：</p>
+<pre><b>$ git tag -a v0.9 558151a</b>
+<b>$ git log --oneline --decorate --graph</b>
+* 594f90b (HEAD, tag: v1.0, master) reverted to old class name
+*   8d585ea Merge branch 'fix_readme'
+|\
+| * 3ac015d (fix_readme) fixed readme title
+* | 3cbb6aa fixed readme title differently
+|/
+*   558151a (<span class="hl">tag: v0.9</span>) Merge branch 'change_class'
+|\
+| * 3467b0a changed the class name
+* | b7ae93b added from ruby
+|/
+* 17f4acf first commit</pre>
+<h1 id="4" style="text-align: center;">四、分享与更新项目</h1>
+<p>Git 并不像 Subversion 那样有个中心服务器。 目前为止所有的命令都是本地执行的，更新的知识本地的数据库。 要通过 Git 
+与其他开发者合作，你需要将数据放到一台其他开发者能够连接的服务器上。 Git 
+实现此流程的方式是将你的数据与另一个仓库同步。在服务器与客户端之间并没有实质的区别 —— Git 仓库就是 Git 
+仓库，你可以很容易地在两者之间同步。</p>
+<p>一旦你有了个 Git 仓库，不管它是在你自己的服务器上，或者是由 GitHub 之类的地方提供， 你都可以告诉 Git 推送你拥有的远端仓库还没有的数据，或者叫 Git 从别的仓库把差别取过来。</p>
+<p>联网的时候你可以随时做这个，它并不需要对应一个&nbsp;<code>commit</code>&nbsp;或者别的什么。 一般你会本地提交几次，然后从你的项目克隆自的线上的共享仓库提取数据以保持最新，将新完成的合并到你完成的工作中去，然后推送你的改动会服务器。</p>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>&nbsp;使用&nbsp;<code>git fetch</code>&nbsp;更新你的项目，使用&nbsp;<code>git push</code>&nbsp;分享你的改动。 你可以用&nbsp;<code>git remote</code>&nbsp;管理你的远程仓库。</p>
+</blockquote>
+<h2 id="4.3" class="nutshell">git remote 罗列、添加和删除远端仓库别名</h2>
+<p>不像中心化的版本控制系统（客户端与服务端很不一样），Git 仓库基本上都是一致的，并且并可以同步他们。 这使得拥有多个远端仓库变得容易 —— 你可以拥有一些只读的仓库，另外的一些也可写的仓库。</p>
+<p>当你需要与远端仓库同步的时候，不需要使用它详细的链接。Git 储存了你感兴趣的远端仓库的链接的别名或者昵称。 你可以使用&nbsp;<code>git remote</code>&nbsp;命令管理这个远端仓库列表。</p>
+<h4 style="color: #883333;">git remote&nbsp;<small style="color: #888888;">列出远端别名</small></h4>
+<p>如果没有任何参数，Git 会列出它存储的远端仓库别名了事。默认情况下，如果你的项目是克隆的（与本地创建一个新的相反）， Git 会自动将你的项目克隆自的仓库添加到列表中，并取名“origin”。 如果你执行时加上&nbsp;<code>-v</code>&nbsp;参数，你还可以看到每个别名的实际链接地址。</p>
+<pre><b>$ git remote</b>
+origin
+<b>$ git remote -v</b>
+origin	git@github.com:github/git-reference.git (fetch)
+origin	git@github.com:github/git-reference.git (push)
+</pre>
+<p>在此你看到了该链接两次，是因为 Git 允许你为每个远端仓库添加不同的推送与获取的链接，以备你读写时希望使用不同的协议。</p>
+<h4 style="color: #883333;">git remote add&nbsp;<small style="color: #888888;">为你的项目添加一个新的远端仓库</small></h4>
+<p>如果你希望分享一个本地创建的仓库，或者你想要获取别人的仓库中的贡献 —— 如果你想要以任何方式与一个新仓库沟通，最简单的方式通常就是把它添加为一个远端仓库。 执行&nbsp;<code>git remote add [alias] [url]</code>&nbsp;就可以。 此命令将&nbsp;<code>[url]</code>&nbsp;以&nbsp;<code>[alias]</code>&nbsp;的别名添加为本地的远端仓库。</p>
+<p>例如，假设我们想要与整个世界分享我们的 Hello World 程序。 我们可以在一台服务器上创建一个新仓库（我以 GitHub 
+为例子）。 它应该会给你一个链接，在这里就是“git@github.com:schacon/hw.git”。 
+要把它添加到我们的项目以便我们推送以及获取更新，我们可以这样：</p>
+<pre><b>$ git remote</b>
+<b>$ git remote add github git@github.com:schacon/hw.git</b>
+<b>$ git remote -v</b>
+github	git@github.com:schacon/hw.git (fetch)
+github	git@github.com:schacon/hw.git (push)
+</pre>
+<p>像分支的命名一样，远端仓库的别名是强制的 —— 就像“master”，没有特别意义，但它广为使用， 因为&nbsp;<code>git init</code>&nbsp;默认用它；“origin”经常被用作远端仓库别名，就因为&nbsp;<code>git clone</code>&nbsp;默认用它作为克隆自的链接的别名。此例中，我决定给我的远端仓库取名“github”，但我叫它随便什么都可以。</p>
+<h4 style="color: #883333;">git remote rm&nbsp;<small style="color: #888888;">删除现存的某个别名</small></h4>
+<p>Git addeth and Git taketh away. 如果你需要删除一个远端 —— 不再需要它了、项目已经没了，等等 —— 你可以使用&nbsp;<code>git remote rm [alias]</code>&nbsp;把它删掉。</p>
+<pre><b>$ git remote -v</b>
+github	git@github.com:schacon/hw.git (fetch)
+github	git@github.com:schacon/hw.git (push)
+<b>$ git remote add origin git://github.com/pjhyett/hw.git</b>
+<b>$ git remote -v</b>
+github	git@github.com:schacon/hw.git (fetch)
+github	git@github.com:schacon/hw.git (push)
+origin	git://github.com/pjhyett/hw.git (fetch)
+origin	git://github.com/pjhyett/hw.git (push)
+<b>$ git remote rm origin</b>
+<b>$ git remote -v</b>
+github	git@github.com:schacon/hw.git (fetch)
+github	git@github.com:schacon/hw.git (push)
+</pre>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>&nbsp;你可以用&nbsp;<code>git remote</code>&nbsp;列出你的远端仓库和那些仓库的链接。 你可以使用&nbsp;<code>git remote add</code>&nbsp;添加新的远端仓库，用&nbsp;<code>git remote rm</code>&nbsp;删掉已存在的那些。</p>
+</blockquote>
+<h2 id="4.1" class="nutshell">git fetch 从远端仓库下载新分支与数据 &nbsp; &nbsp;git pull 从远端仓库提取数据并尝试合并到当前分支</h2>
+<p>Git 有两个命令用来从某一远端仓库更新。&nbsp;<code>git fetch</code>&nbsp;会使你与另一仓库同步，提取你
+本地所没有的数据，为你在同步时的该远端的每一分支提供书签。 这些分支被叫做“远端分支”，除了 Git 
+不允许你检出（切换到该分支）之外，跟本地分支没区别 —— 
+你可以将它们合并到当前分支，与其他分支作比较差异，查看那些分支的历史日志，等等。同步之后你就可以在本地操作这些。</p>
+<p>第二个会从远端服务器提取新数据的命令是&nbsp;<code>git pull</code>。 基本上，该命令就是在&nbsp;<code>git fetch</code>&nbsp;之后紧接着&nbsp;<code>git merge</code>&nbsp;远端分支到你所在的任意分支。 我个人不太喜欢这命令 —— 我更喜欢<code>fetch</code>&nbsp;和&nbsp;<code>merge</code>&nbsp;分开来做。少点魔法，少点问题。 不过，如果你喜欢这主意，你可以看一下&nbsp;<code>git pull</code>&nbsp;的&nbsp;<a title="" data-original-title="" style="font-weight: bold; color: #000000;" href="http://git-scm.com/docs/git-pull" target="new">官方文档</a>。</p>
+<p>假设你配置好了一个远端，并且你想要提取更新，你可以首先执行&nbsp;<code>git fetch [alias]</code>&nbsp;告诉 Git 去获取它有你没有的数据，然后你可以执行&nbsp;<code>git merge [alias]/[branch]</code>&nbsp;以将服务器上的任何更新（假设有人这时候推送到服务器了）合并到你的当前分支。 那么，如果我是与两三个其他人合作 Hello World 项目，并且想要将我最近连接之后的所有改动拿过来，我可以这么做：</p>
+<pre><b>$ git fetch github</b>
+remote: Counting objects: 4006, done.
+remote: Compressing objects: 100% (1322/1322), done.
+remote: Total 2783 (delta 1526), reused 2587 (delta 1387)
+Receiving objects: 100% (2783/2783), 1.23 MiB | 10 KiB/s, done.
+Resolving deltas: 100% (1526/1526), completed with 387 local objects.
+From github.com:schacon/hw
+   8e29b09..c7c5a10  master     -&gt; github/master
+   0709fdc..d4ccf73  c-langs    -&gt; github/c-langs
+   6684f82..ae06d2b  java       -&gt; github/java
+ * [new branch]      ada        -&gt; github/ada
+ * [new branch]      lisp       -&gt; github/lisp
+</pre>
+<p>可以看到自从上一次与远端仓库同步以后，又新赠或更新了五个分支。 “ada”与“lisp”分支是新的，而“master”、“clang”与“java”分支则被更新了。 在此例中，我的团队在合并入主分支之前，将提议的更新推送到远端分支以审核。</p>
+<p>你可以看到 Git 做的映射。远端仓库的主分支成为了本地的一个叫做“github/master”的分支。 这样我就可以执行&nbsp;<code>git merge github/master</code>&nbsp;将远端的主分支和并入我的本地主分支。 或者，我可以&nbsp;<code>git log github/master ^master</code>&nbsp;看看该分支上的新提交。 如果你的远端仓库叫做“origin”，那远端主分支就会叫做&nbsp;<code>origin/master</code>。几乎所有能在本地分支上执行的命令都可以在远端分支上用。</p>
+<p>如果你有多个远端仓库，你可以执行&nbsp;<code>git fetch [alias]</code>&nbsp;提取特定的远端仓库， 或者执行&nbsp;<code>git fetch --all</code>&nbsp;告诉 Git 同步所有的远端仓库。</p>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>&nbsp;执行&nbsp;<code>git fetch [alias]</code>&nbsp;来将你的仓库与远端仓库同步，提取所有它独有的数据到本地分支以合并或者怎样。</p>
+</blockquote>
+<h2 id="4.2" class="nutshell">git push 推送你的新分支与数据到某个远端仓库</h2>
+<p>想要与他人分享你牛鼻的提交，你需要将改动推送到远端仓库。 执行&nbsp;<code>git push [alias] [branch]</code>，就会将你的 [branch] 分支推送成为 [alias] 远端上的 [branch] 分支。 让我们试试推送我们的主分支到先前添加的“github”远端仓库上去。</p>
+<pre><b>$ git push github master</b>
+Counting objects: 25, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (25/25), 2.43 KiB, done.
+Total 25 (delta 4), reused 0 (delta 0)
+To git@github.com:schacon/hw.git
+ * [new branch]      master -&gt; master
+</pre>
+<p>挺简单。现在如果有人从该仓库克隆，他会得到我提交的完完全全的一份历史记录了。</p>
+<p>如果有个像之前创建的“erlang”分支那样的主题分支，想只分享这个，该怎么办呢？你可以相应的只推送该分支。</p>
+<pre><b>$ git push github erlang</b>
+Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 652 bytes, done.
+Total 6 (delta 1), reused 0 (delta 0)
+To git@github.com:schacon/hw.git
+ * [new branch]      erlang -&gt; erlang
+</pre>
+<p>现在当人们从该仓库克隆时，他们就会得到一个“erlang”分支以查阅、合并。 用这种方式，你可以推送任何分支到任何你有写权限的仓库。 如果你的分支已经在该仓库中了，它会试着去更新，如果它不再，Git 会把它加上。</p>
+<p>最后一个当你推送到远端分支时会碰到的主要问题是，其他人在此期间也推送了的情况。 如果你和另一个开发者同时克隆了，又都有提交，那么当她推送后你也想推送时，默认情况下 Git 不会让你覆盖她的改动。 相反的，它会在你试图推送的分支上执行&nbsp;<code>git log</code>，确定它能够在你的推送分支的历史记录中看到服务器分支的当前进度。 如果它在在你的历史记录中看不到，它就会下结论说你过时了，并打回你的推送。 你需要正式提取、合并，然后再次推送 —— 以确定你把她的改动也考虑在内了。</p>
+<p>当你试图推送到某个以被更新的远端分支时，会出现下面这种情况：</p>
+<pre><b>$ git push github master</b>
+To git@github.com:schacon/hw.git
+ ! [rejected]        master -&gt; master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:schacon/hw.git'
+To prevent you from losing history, non-fast-forward updates were rejected
+Merge the remote changes before pushing again.  See the 'Note about
+fast-forwards' section of 'git push --help' for details.
+</pre>
+<p>你可以修正这个问题。执行&nbsp;<code>git fetch github; git merge github/master</code>，然后再推送</p>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>&nbsp;执行&nbsp;<code>git push [alias] [branch]</code>&nbsp;将你的本地改动推送到远端仓库。 如果可以的话，它会依据你的 [branch] 的样子，推送到远端的 [branch] 去。 如果在你上次提取、合并之后，另有人推送了，Git 服务器会拒绝你的推送，知道你是最新的为止。</p>
+</blockquote>
+<h1 id="5" class="nutshell" style="text-align: center;">五、检查与比较</h1>
+<p>现在你有了一堆分支，短期的主题、长期的特性或者其它。怎样追踪他们呢？ Git 有一组工具，可以帮助你弄明白工作是在哪儿完成的，两个分支间的区别是啥，等等。</p>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>&nbsp;执行&nbsp;<code>git log</code>&nbsp;找到你的项目历史中的特定提交 —— 按作者、日期、内容或者历史记录。执行&nbsp;<code>git diff</code>&nbsp;比较历史记录中的两个不同的点 —— 通常是为了看看两个分支有啥区别，或者从某个版本到另一个版本，你的软件都有啥变化。</p>
+</blockquote>
+<h2 id="5.1" class="nutshell">git log 过滤你的提交历史记录</h2>
+<p>通过查看分支中另一分支看不到的提交记录，我们已经看到如何用&nbsp;<code>git log</code>&nbsp;来比较分支。 （如果你不记得了，它看起来是这样的：<code>git log branchA ^branchB</code>）。 而且，你也可以用<code>git log</code>&nbsp;去寻找特定的提交。 在此，我们会看到一些更广为使用的&nbsp;<code>git log</code>&nbsp;选项，不过哪有很多。 完整的清单可以看看官方文档。</p>
+<h4 style="color: #883333;">git log –author&nbsp;<small style="color: #888888;">只寻找某个特定作者的提交</small></h4>
+<p>要过滤你的提交历史，只寻找某个特定作者的提交，你可以使用&nbsp;<code>--author</code>&nbsp;选项。 例如，比方说我们要找 Git 源码中 Linus 提交的部分。 我们可以执行类似&nbsp;<code>git log --author=Linus</code>&nbsp;的命令。 这个查找是大小写敏感的，并且也会检索电子邮箱地址。 我在此例中使用&nbsp;<code>-[number]</code>&nbsp;选项，以限制结果为最近 [number] 次的提交。</p>
+<pre><b>$ git log --author=Linus --oneline -5</b>
+81b50f3 Move 'builtin-*' into a 'builtin/' subdirectory
+3bb7256 make "index-pack" a built-in
+377d027 make "git pack-redundant" a built-in
+b532581 make "git unpack-file" a built-in
+112dd51 make "mktag" a built-in
+</pre>
+<h4 style="color: #883333;">git log –since –before&nbsp;<small style="color: #888888;">根据日期过滤提交记录</small></h4>
+<p>如果你要指定一个你感兴趣的日期范围以过滤你的提交，可以执行几个选项 —— 我用&nbsp;<code>--since</code>&nbsp;和&nbsp;<code>--before</code>，但是你也可以用&nbsp;<code>--until</code>&nbsp;和&nbsp;<code>--after</code>。 例如，如果我要看 Git 项目中三周前且在四月十八日之后的所有提交，我可以执行这个（我还用了&nbsp;<code>--no-merges</code>&nbsp;选项以隐藏合并提交）：</p>
+<pre><b>$ git log --oneline --before={3.weeks.ago} --after={2010-04-18} --no-merges</b>
+5469e2d Git 1.7.1-rc2
+d43427d Documentation/remote-helpers: Fix typos and improve language
+272a36b Fixup: Second argument may be any arbitrary string
+b6c8d2d Documentation/remote-helpers: Add invocation section
+5ce4f4e Documentation/urls: Rewrite to accomodate transport::address
+00b84e9 Documentation/remote-helpers: Rewrite description
+03aa87e Documentation: Describe other situations where -z affects git diff
+77bc694 rebase-interactive: silence warning when no commits rewritten
+636db2c t3301: add tests to use --format="%N"
+</pre>
+<h4 style="color: #883333;">git log –grep&nbsp;<small style="color: #888888;">根据提交注释过滤提交记录</small></h4>
+<p>你或许还想根据提交注释中的某个特定短语查找提交记录。可以用&nbsp;<code>--grep</code>&nbsp;选项。 比如说我知道有个提交是有关使用 P4EDITOR 环境变量，又想回忆起那个改动是啥样子的 —— 我可以用<code>--grep</code>&nbsp;选项找到该提交。</p>
+<pre><b>$ git log --grep=P4EDITOR --no-merges</b>
+<span class="yellow" style="color: #999933;">commit 82cea9ffb1c4677155e3e2996d76542502611370</span>
+Author: Shawn Bohrer
+Date:   Wed Mar 12 19:03:24 2008 -0500
+
+    git-p4: Use P4EDITOR environment variable when set
+
+    Perforce allows you to set the P4EDITOR environment variable to your
+    preferred editor for use in perforce.  Since we are displaying a
+    perforce changelog to the user we should use it when it is defined.
+
+    Signed-off-by: Shawn Bohrer &lt;shawn.bohrer@gmail.com&gt;
+    Signed-off-by: Simon Hausmann &lt;simon@lst.de&gt;
+</pre>
+<p>Git 会对所有的&nbsp;<code>--grep</code>&nbsp;和&nbsp;<code>--author</code>&nbsp;参数作逻辑或。 如果你用&nbsp;<code>--grep</code>&nbsp;和&nbsp;<code>--author</code>&nbsp;时，想看的是某人写作的并且有某个特殊的注释内容的提交记录， 你需要加上&nbsp;<code>--all-match</code>&nbsp;选项。 在这些例子中，我会用上&nbsp;<code>--format</code>&nbsp;选项，这样我们就可以看到每个提交的作者是谁了。</p>
+<p>如果我查找注释内容含有 “p4 depo”的提交，我得到了三个提交：</p>
+<pre><b>$ git log --grep="p4 depo" --format="%h %an %s"</b>
+ee4fd1a Junio C Hamano Merge branch 'master' of git://repo.or.cz/git/fastimport
+da4a660 Benjamin Sergeant git-p4 fails when cloning a p4 depo.
+1cd5738 Simon Hausmann Make incremental imports easier to use by storing the p4 d
+</pre>
+<p>如果我加上&nbsp;<code>--author=Hausmann</code>&nbsp;参数，与进一步过滤上述结果到 Simon 的唯一提交相反， 它会告诉我所有 Simon 的提交，或者注释中有“p4 demo”的提交：</p>
+<pre><b>$ git log --grep="p4 depo" --format="%h %an %s" --author="Hausmann"</b>
+cdc7e38 Simon Hausmann Make it possible to abort the submission of a change to Pe
+f5f7e4a Simon Hausmann Clean up the git-p4 documentation
+30b5940 Simon Hausmann git-p4: Fix import of changesets with file deletions
+4c750c0 Simon Hausmann git-p4: git-p4 submit cleanups.
+0e36f2d Simon Hausmann git-p4: Removed git-p4 submit --direct.
+edae1e2 Simon Hausmann git-p4: Clean up git-p4 submit's log message handling.
+4b61b5c Simon Hausmann git-p4: Remove --log-substitutions feature.
+36ee4ee Simon Hausmann git-p4: Ensure the working directory and the index are cle
+e96e400 Simon Hausmann git-p4: Fix submit user-interface.
+38f9f5e Simon Hausmann git-p4: Fix direct import from perforce after fetching cha
+2094714 Simon Hausmann git-p4: When skipping a patch as part of "git-p4 submit" m
+1ca3d71 Simon Hausmann git-p4: Added support for automatically importing newly ap
+...
+</pre>
+<p>不过，如果加上&nbsp;<code>--all-match</code>，结果就是我想要的了：</p>
+<pre><b>$ git log --grep="p4 depo" --format="%h %an %s" --author="Hausmann" --all-match</b>
+1cd5738 Simon Hausmann Make incremental imports easier to use by storing the p4 d
+</pre>
+<h4 style="color: #883333;">git log -S&nbsp;<small style="color: #888888;">依据所引入的差值过滤</small></h4>
+<p>如果你写的提交注释都极度糟糕怎么办？或者，如果你要找某个函数是何时引入的，某些变量是在哪里开始被使用的？ 你可以告诉 Git 
+在每个提交之间的差值中查找特定字符串。 
+例如，如果我们想要找出哪个提交修改出了类似函数名“userformat_find_requirements”， 
+我们可以执行（注意在“-S”与你要找的东东之间没有“=”）：</p>
+<pre><b>$ git log -Suserformat_find_requirements</b>
+<span class="yellow" style="color: #999933;">commit 5b16360330822527eac1fa84131d185ff784c9fb</span>
+Author: Johannes Gilger
+Date:   Tue Apr 13 22:31:12 2010 +0200
+
+    pretty: Initialize notes if %N is used
+
+    When using git log --pretty='%N' without an explicit --show-notes, git
+    would segfault. This patches fixes this behaviour by loading the needed
+    notes datastructures if --pretty is used and the format contains %N.
+    When --pretty='%N' is used together with --no-notes, %N won't be
+    expanded.
+
+    This is an extension to a proposed patch by Jeff King.
+
+    Signed-off-by: Johannes Gilger
+    Signed-off-by: Junio C Hamano
+</pre>
+<h4 style="color: #883333;">git log -p&nbsp;<small style="color: #888888;">显示每个提交引入的补丁</small></h4>
+<p>每个提交都是项目的一个快照。由于每个提交都记录它所基于的快照，Git 能够经常对它们求差值，并以补丁形式向你展示。 这意味着，对任意提交，你都可以获取该提交给项目引入补丁。 你可以用&nbsp;<code>git show [SHA]</code>&nbsp;加上某个特定的提交 SHA 获取，或者执行&nbsp;<code>git log -p</code>， 它会告诉 Git 输出每个提交之后的补丁。这是个总结某一分支或者两个提交之间都发生了神马的好途径。</p>
+<pre><b>$ git log -p --no-merges -2</b>
+<span class="yellow" style="color: #999933;">commit 594f90bdee4faf063ad07a4a6f503fdead3ef606</span>
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri Jun 4 15:46:55 2010 +0200
+
+    reverted to old class name
+
+<span class="umber" style="color: #8a3324;">diff --git a/ruby.rb b/ruby.rb
+index bb86f00..192151c 100644
+--- a/ruby.rb
++++ b/ruby.rb</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,7 +1,7 @@</span>
+<span class="red" style="color: #dd3333;">-class HiWorld</span>
+<span class="green" style="color: #338833;">+class HelloWorld</span>
+   def self.hello
+     puts "Hello World from Ruby"
+   end
+ end
+
+<span class="red" style="color: #dd3333;">-HiWorld.hello</span>
+<span class="green" style="color: #338833;">+HelloWorld.hello</span>
+
+<span class="yellow" style="color: #999933;">commit 3cbb6aae5c0cbd711c098e113ae436801371c95e</span>
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri Jun 4 12:58:53 2010 +0200
+
+    fixed readme title differently
+
+<span class="umber" style="color: #8a3324;">diff --git a/README b/README
+index d053cc8..9103e27 100644
+--- a/README
++++ b/README</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,4 +1,4 @@</span>
+<span class="red" style="color: #dd3333;">-Hello World Examples</span>
+<span class="green" style="color: #338833;">+Many Hello World Examples</span>
+ ======================
+
+ This project has examples of hello world in
+</pre>
+<p>这是个总结改动，以及合并或发布之前重审一系列提交的好方式。</p>
+<h4 style="color: #883333;">git log –stat&nbsp;<small style="color: #888888;">显示每个提交引入的改动的差值统计</small></h4>
+<p>如果&nbsp;<code>-p</code>&nbsp;选项对你来说太详细了，你可以用&nbsp;<code>--stat</code>&nbsp;总结这些改动。 这是不用&nbsp;<code>-p</code>，而用&nbsp;<code>--stat</code>&nbsp;选项时，同一份日志的输出。</p>
+<pre><b>$ git log --stat --no-merges -2</b>
+<span class="yellow" style="color: #999933;">commit 594f90bdee4faf063ad07a4a6f503fdead3ef606</span>
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri Jun 4 15:46:55 2010 +0200
+
+    reverted to old class name
+
+ ruby.rb |    4 <span class="green" style="color: #338833;">++</span><span class="red" style="color: #dd3333;">--</span>
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+<span class="yellow" style="color: #999933;">commit 3cbb6aae5c0cbd711c098e113ae436801371c95e</span>
+Author: Scott Chacon &lt;schacon@gmail.com&gt;
+Date:   Fri Jun 4 12:58:53 2010 +0200
+
+    fixed readme title differently
+
+ README |    2 <span class="green" style="color: #338833;">+</span><span class="red" style="color: #dd3333;">-</span>
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+</pre>
+<p>同样的基本信息，但更紧凑 —— 它仍然让你看到相对改动，和改动了哪些文件。</p>
+<h2 id="5.2">git diff</h2>
+<p>最后，要查看两个提交快照的绝对改动，你可以用&nbsp;<code>git diff</code>&nbsp;命令。 这在两个主要情况中广为使用 —— 查看两个分支彼此之间的差值，和查看自发布或者某个旧历史点之后都有啥变了。让我们看看这俩情况。</p>
+<p>你仅需执行&nbsp;<code>git diff [version]</code>（或者你给该发布打的任何标签）就可以查看自最近发布之后的改动。 例如，如果我们想要看看自 v0.9 发布之后我们的项目改变了啥，我们可以执行&nbsp;<code>git diff v0.9</code></p>
+<pre><b>$ git diff v0.9</b>
+<span class="umber" style="color: #8a3324;">diff --git a/README b/README
+index d053cc8..d4173d5 100644
+--- a/README
++++ b/README</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,4 +1,4 @@</span>
+<span class="red" style="color: #dd3333;">-Hello World Examples</span>
+<span class="green" style="color: #338833;">+Many Hello World Lang Examples</span>
+ ======================
+
+ This project has examples of hello world in
+<span class="umber" style="color: #8a3324;">diff --git a/ruby.rb b/ruby.rb
+index bb86f00..192151c 100644
+--- a/ruby.rb
++++ b/ruby.rb</span>
+<span class="lblue" style="color: #5555aa;">@@ -1,7 +1,7 @@</span>
+<span class="red" style="color: #dd3333;">-class HiWorld</span>
+<span class="green" style="color: #338833;">+class HelloWorld</span>
+   def self.hello
+     puts "Hello World from Ruby"
+   end
+ end
+
+<span class="red" style="color: #dd3333;">-HiWorld.hello</span>
+<span class="green" style="color: #338833;">+HelloWorld.hello</span>
+</pre>
+<p>正如&nbsp;<code>git log</code>，你可以给它加上&nbsp;<code>--stat</code>&nbsp;参数。</p>
+<pre><b>$ git diff v0.9 --stat</b>
+ README  |    2 +-
+ ruby.rb |    4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+</pre>
+<p>要比较两个不同的分支，你可以执行类似&nbsp;<code>git diff branchA branchB</code>&nbsp;的命
+令。 不过它的问题在于它会完完全全按你说的作 —— 它会直接给你个补丁文件，该补丁能够将甲分支的最新快照变成乙分支的最新快照的样子。 
+这意味着如果两个分支已经产生分歧 —— 奔往两个不同方向了 —— 它会移除甲分支中引入的所有工作，然后累加乙分支中的所有工作。 
+这大概不是你要的吧 —— 你想要不在甲分支中的乙分支的改动。所以你真的需要的是两个分支叉开去时，和最新的乙分支的差别。 
+所以，如果我们的历史记录看起来像这样：</p>
+<pre><b>$ git log --graph --oneline --decorate --all</b>
+* 594f90b (HEAD, tag: v1.0, master) reverted to old class name
+| * 1834130 (erlang) added haskell
+| * ab5ab4c added erlang
+|/
+*   8d585ea Merge branch 'fix_readme'
+...
+</pre>
+<p>并且，我们想要看“erlang”分支与主分支相比的查别。执行&nbsp;<code>git diff master erlang</code>&nbsp;会给我们错误的结果。</p>
+<pre><b>$ git diff --stat master erlang</b>
+ erlang_hw.erl |    5 +++++
+ haskell.hs    |    4 ++++
+ ruby.rb       |    4 ++--
+ 3 files changed, 11 insertions(+), 2 deletions(-)
+</pre>
+<p>你可以看到，它加上了 erlang 和 haskell 文件，这确实是我们在该分支中做的， 但是它同时恢复了我们在主分支中改动的 ruby
+ 文件。我们真心想要的只是“erlang”分支中的改动（添加两个文件）。 我们可以通过求两个分支分歧时的共同提交与该分支的差值得到想要的结果：</p>
+<pre><b>$ git diff --stat 8d585ea erlang</b>
+ erlang_hw.erl |    5 +++++
+ haskell.hs    |    4 ++++
+ 2 files changed, 9 insertions(+), 0 deletions(-)
+</pre>
+<p>这才是我们在找的，但是我们可不想要每次都要找出两个分支分歧时的那次提交。 幸运的是，Git 为此提供了一个快捷方式。 如果你执行&nbsp;<code>git diff master...erlang</code>（在分支名之间有三个半角的点）， Git 就会自动找出两个分支的共同提交（也被成为合并基础），并求差值。</p>
+<pre><b>$ git diff --stat master erlang</b>
+ erlang_hw.erl |    5 +++++
+ haskell.hs    |    4 ++++
+ ruby.rb       |    4 ++--
+ 3 files changed, 11 insertions(+), 2 deletions(-)
+<b>$ git diff --stat master...erlang</b>
+ erlang_hw.erl |    5 +++++
+ haskell.hs    |    4 ++++
+ 2 files changed, 9 insertions(+), 0 deletions(-)
+</pre>
+<p>几乎每一次你要对比两个分支的时候，你都会想用三个点的语法，因为它通常会给你你想要的。</p>
+<p>顺带提一句，你还可以让 Git 手工计算两次提交的合并基础（第一个共同的祖提交），即&nbsp;<code>git merge-base</code>&nbsp;命令：</p>
+<pre><b>$ git merge-base master erlang</b>
+8d585ea6faf99facd39b55d6f6a3b3f481ad0d3d
+</pre>
+<p>所以你执行下面这个也跟&nbsp;<code>git diff master...erlang</code>&nbsp;一样：</p>
+<pre><b>$ git diff --stat $(git merge-base master erlang) erlang</b>
+ erlang_hw.erl |    5 +++++
+ haskell.hs    |    4 ++++
+ 2 files changed, 9 insertions(+), 0 deletions(-)
+</pre>
+<p>当然，我会推荐简单点的那个。</p>
+<blockquote>
+<p class="nutshell"><b>简而言之</b>&nbsp;使用&nbsp;<code>git diff</code>&nbsp;查看某一分支自它偏离出来起与过去某一点之间项目的改动。 总是使用&nbsp;<code>git diff branchA...branchB</code>&nbsp;来查看 branchB 与 branchA 的相对差值，这会让事情简单点。</p>
+</blockquote>
+<p>原文地址：<a title="" data-original-title="" href="http://gitref.org/zh/index.html" target="_blank">http://gitref.org/zh/index.html</a></p>
+<p>转载请注明：<a title="" data-original-title="" href="http://www.ihref.com/">爱分享</a> » <a title="" data-original-title="" href="http://www.ihref.com/read-16369.html">Git版本控制软件结合GitHub从入门到精通常用命令学习手册</a><br>原文地址：<a title="" data-original-title="" href="http://www.ihref.com/read-16369.html">http://www.ihref.com/read-16369.html</a></p>            <div class="banner banner-comment"><div><div style="padding-top:15px"><script async="" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/adsbygoogle.js"></script>
+<!-- 爱分享内容下广告 -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-4019190604262164" data-ad-slot="9135729135" data-ad-format="auto"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:920px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:920px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="920"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<div style="width:360px;margin:0 auto;height:350px;"><div style="padding-top:30px;position:absolute;"><script type="text/javascript">
+/*爱分享内容下大矩形*/
+var cpro_id = "u1506107";
+</script>
+<script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1506107_0"><iframe id="cproIframe_u1506107_3" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/acom_003.htm" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="300" width="360"></iframe></div><script charset="utf-8" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/acom_003"></script></div></div></div></div>            <div class="share"><div data-bd-bind="1447638345011" class="bdsharebuttonbox bdshare-button-style1-32"><span class="share-tit">分享此文到：</span><a title="" data-original-title="" href="#" class="bds_more" data-cmd="more"></a><a data-original-title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a data-original-title="分享到人人网" href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a data-original-title="分享到豆瓣网" href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a data-original-title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a data-original-title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a data-original-title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div></div>		</article>
+
+						<!-- 广告2结束 -->
+		<footer class="article-footer">
+			<div class="article-tags">继续浏览有关 <a href="http://www.ihref.com/read-tag/git" rel="tag">Git</a><a href="http://www.ihref.com/read-tag/github" rel="tag">GitHub</a><a href="http://www.ihref.com/read-tag/%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" rel="tag">常用命令</a><a href="http://www.ihref.com/read-tag/%e6%89%8b%e5%86%8c" rel="tag">手册</a> 的文章</div>		</footer>
+
+		<nav class="article-nav">
+			<span class="article-nav-prev">上一篇 <a href="http://www.ihref.com/read-16345.html" rel="prev">win8系统进程多运行反应慢简单适用的优化方法</a></span>
+			<span class="article-nav-next"><a href="http://www.ihref.com/read-16377.html" rel="next">Git客户端图文详解如何安装配置GitHub操作流程攻略</a> 下一篇</span>
+		</nav>
+
+		<div class="relates">
+			<h3>与本文相关的文章</h3>
+			<ul>
+<li><a href="http://www.ihref.com/read-16514.html">Windows英文版GitHub客户端使用操作流程图文攻略教程现没中文版</a></li><li><a href="http://www.ihref.com/read-16377.html">Git客户端图文详解如何安装配置GitHub操作流程攻略</a></li><li><a href="http://www.ihref.com/read-16978.html">最新win10快捷键汇总虚拟桌面Cortana小娜多任务处理键盘操作更方便</a></li><li><a href="http://www.ihref.com/read-16867.html">Chrome浏览器新标签页怎么设置首页主页修改添加网站Infinity插件好用</a></li><li><a href="http://www.ihref.com/read-16675.html">两台无线路由器怎么连接设置桥连接让局域网覆盖整个家无线漫游安装方法</a></li><li><a href="http://www.ihref.com/read-16470.html">苹果官网如何让iCloud更加安全保护自己隐私照片</a></li><li><a href="http://www.ihref.com/read-16450.html">iPhone短信里如何输入自己设置的自定义表情图标</a></li><li><a href="http://www.ihref.com/read-16422.html">30多条mysql数据库优化方法,千万级数据库记录查询轻松解决</a></li><li><a href="http://www.ihref.com/read-16309.html">Microsoft Office Excel 2013最新快捷键大全整理收藏</a></li><li><a href="http://www.ihref.com/read-16310.html">Microsoft Office OneNote 2013最新快捷键大全整理收藏</a></li><li><a href="http://www.ihref.com/read-16311.html">Microsoft Office PowerPoint 2013最新快捷键大全整理收藏</a></li><li><a href="http://www.ihref.com/read-16307.html">Microsoft Office Word 2013最新快捷键大全整理收藏</a></li></ul>		</div>
+
+		<div class="banner banner-related"><script type="text/javascript">
+    /*为了保证用户体验及收益，图片大小不得小于：200*180*/
+    /*爱分享pc图片+*/
+var cpro_id = "u2282564";
+</script>
+<script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/i.js" type="text/javascript"></script></div>
+		<div id="respond" class="no_webshot">
+		<form action="http://www.ihref.com/wp-comments-post.php" method="post" id="commentform">
+		
+		<div class="comt-title">
+			<div class="comt-avatar pull-left">
+				<img style="" alt="" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/a.htm" class="avatar avatar-28 photo avatar-default" height="28" width="28">			</div>
+			<div class="comt-author pull-left">
+			<span>发表我的评论</span>			</div>
+			<a id="cancel-comment-reply-link" class="pull-right" href="javascript:;">取消评论</a>
+		</div>
+		<div class="comt">
+			<div class="comt-box">
+				<textarea placeholder="写点什么..." class="input-block-level comt-area" name="comment" id="comment" cols="100%" rows="3" tabindex="1" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+				<div class="comt-ctrl">
+					<button class="btn btn-primary pull-right" type="submit" name="submit" id="submit" tabindex="5"><i class="icon-ok-circle icon-white icon12"></i> 提交评论</button>
+					<div class="comt-tips pull-right"><input name="comment_post_ID" value="16369" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="b2bd411ea3" type="hidden"></p><p style="display: none;"></p><div style="display: none;" class="comt-tip comt-loading">正在提交, 请稍候...</div><div style="display: none;" class="comt-tip comt-error">#</div></div>
+					<span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="icon-thumbs-up icon12"></i> 表情</span>
+					<span class="muted comt-mailme"><label for="comment_mail_notify" class="checkbox inline" style="padding-top:0"><input name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked" type="checkbox">有人回复时邮件通知我</label></span>
+				</div>
+			</div>
+
+												<div class="comt-comterinfo" id="comment-author-info">
+						<h4>Hi，您需要填写昵称和邮箱！</h4>
+						<ul>
+							<li class="form-inline"><label class="hide" for="author">昵称</label><input class="ipt" name="author" id="author" tabindex="2" placeholder="昵称" type="text"><span class="help-inline">昵称 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="email">邮箱</label><input class="ipt" name="email" id="email" tabindex="3" placeholder="邮箱" type="text"><span class="help-inline">邮箱 (必填)</span></li>
+							<li class="form-inline"><label class="hide" for="url">网址</label><input class="ipt" name="url" id="url" tabindex="4" placeholder="网址" type="text"><span class="help-inline">网址</span></li>
+						</ul>
+					</div>
+									</div>
+
+		
+	<input id="ak_js" name="ak_js" value="1447638344219" type="hidden"></form>
+	</div>
+<div id="postcomments">
+	<h3 id="comments">
+		网友最新评论<b> (7)</b>
+	</h3>
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1" id="comment-2320"><div class="c-avatar"><img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/default.png" alt="" data-original="http://sdn.geekzu.org/avatar/71ff208a394f755d0b7929162edc4c44?s=36&amp;d=http%3A%2F%2Fwww.ihref.com%2Fwp-content%2Fthemes%2Fd8-3_0%2Fimg%2Fdefault.png%3Fs%3D36&amp;r=G" class="avatar avatar-36 photo" height="36" width="36"></div><div class="c-main" id="div-comment-2320">楼主辛苦咯<div class="c-meta"><span class="c-author">阿江</span>2015-10-16 16:53 <a class="comment-reply-link" href="http://www.ihref.com/read-16369.html?replytocom=2320#respond" onclick='return addComment.moveForm( "div-comment-2320", "2320", "respond", "16369" )' aria-label="回复给阿江">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2318"><div class="c-avatar"><img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/default.png" alt="" data-original="http://sdn.geekzu.org/avatar/7b9af39658e44c860df229417ea51f7d?s=36&amp;d=http%3A%2F%2Fwww.ihref.com%2Fwp-content%2Fthemes%2Fd8-3_0%2Fimg%2Fdefault.png%3Fs%3D36&amp;r=G" class="avatar avatar-36 photo" height="36" width="36"></div><div class="c-main" id="div-comment-2318">nice<div class="c-meta"><span class="c-author">larry</span>2015-10-08 10:41 <a class="comment-reply-link" href="http://www.ihref.com/read-16369.html?replytocom=2318#respond" onclick='return addComment.moveForm( "div-comment-2318", "2318", "respond", "16369" )' aria-label="回复给larry">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-2229"><div class="c-avatar"><img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/default.png" alt="" data-original="http://sdn.geekzu.org/avatar/440608b37b9f69c7f35e62e2f4f2d134?s=36&amp;d=http%3A%2F%2Fwww.ihref.com%2Fwp-content%2Fthemes%2Fd8-3_0%2Fimg%2Fdefault.png%3Fs%3D36&amp;r=G" class="avatar avatar-36 photo" height="36" width="36"></div><div class="c-main" id="div-comment-2229">非常详细的git教程 谢谢博主幸苦了<div class="c-meta"><span class="c-author">cyclone77</span>2015-05-13 13:49 <a class="comment-reply-link" href="http://www.ihref.com/read-16369.html?replytocom=2229#respond" onclick='return addComment.moveForm( "div-comment-2229", "2229", "respond", "16369" )' aria-label="回复给cyclone77">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2216"><div class="c-avatar"><img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/default.png" alt="" data-original="http://sdn.geekzu.org/avatar/e5ef88cc513b9b5dfd5733099715e76b?s=36&amp;d=http%3A%2F%2Fwww.ihref.com%2Fwp-content%2Fthemes%2Fd8-3_0%2Fimg%2Fdefault.png%3Fs%3D36&amp;r=G" class="avatar avatar-36 photo" height="36" width="36"></div><div class="c-main" id="div-comment-2216">很棒很棒！谢谢！<div class="c-meta"><span class="c-author">slider</span>2015-04-17 13:22 <a class="comment-reply-link" href="http://www.ihref.com/read-16369.html?replytocom=2216#respond" onclick='return addComment.moveForm( "div-comment-2216", "2216", "respond", "16369" )' aria-label="回复给slider">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-1956"><div class="c-avatar"><img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/default.png" alt="" data-original="http://sdn.geekzu.org/avatar/c17b7215d75cca18c6e78fc4f044f4cb?s=36&amp;d=http%3A%2F%2Fwww.ihref.com%2Fwp-content%2Fthemes%2Fd8-3_0%2Fimg%2Fdefault.png%3Fs%3D36&amp;r=G" class="avatar avatar-36 photo" height="36" width="36"></div><div class="c-main" id="div-comment-1956">啊<div class="c-meta"><span class="c-author"><a target="_blank" href="http://%E8%AF%95%E8%AF%95/" rel="external nofollow" class="url">方法</a></span>2014-10-11 13:57 <a class="comment-reply-link" href="http://www.ihref.com/read-16369.html?replytocom=1956#respond" onclick='return addComment.moveForm( "div-comment-1956", "1956", "respond", "16369" )' aria-label="回复给方法">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1936"><div class="c-avatar"><img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/default.png" alt="" data-original="http://sdn.geekzu.org/avatar/47aaac520582b6714892e8f777ea725f?s=36&amp;d=http%3A%2F%2Fwww.ihref.com%2Fwp-content%2Fthemes%2Fd8-3_0%2Fimg%2Fdefault.png%3Fs%3D36&amp;r=G" class="avatar avatar-36 photo" height="36" width="36"></div><div class="c-main" id="div-comment-1936">不错，真心不错，晚上在拜读一遍<div class="c-meta"><span class="c-author"><a target="_blank" href="http://www.ihref.com/read-16369.html" rel="external nofollow" class="url">123</a></span>2014-08-31 15:28 <a class="comment-reply-link" href="http://www.ihref.com/read-16369.html?replytocom=1936#respond" onclick='return addComment.moveForm( "div-comment-1936", "1936", "respond", "16369" )' aria-label="回复给123">回复</a></div></div></li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="comment-1935"><div class="c-avatar"><img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/default.png" alt="" data-original="http://sdn.geekzu.org/avatar/0892ef21ee8509c4d2b66723ed198aee?s=36&amp;d=http%3A%2F%2Fwww.ihref.com%2Fwp-content%2Fthemes%2Fd8-3_0%2Fimg%2Fdefault.png%3Fs%3D36&amp;r=G" class="avatar avatar-36 photo" height="36" width="36"></div><div class="c-main" id="div-comment-1935">非常详细的github教程 谢谢<div class="c-meta"><span class="c-author">鲜活</span>2014-08-30 18:09 <a class="comment-reply-link" href="http://www.ihref.com/read-16369.html?replytocom=1935#respond" onclick='return addComment.moveForm( "div-comment-1935", "1935", "respond", "16369" )' aria-label="回复给鲜活">回复</a></div></div></li><!-- #comment-## -->
+	</ol>
+	<div class="pagenav">
+			</div>
+</div>
+
+	</div>
+</div>
+<aside class="sidebar">	
+<div class="widget d_textbanner"><a class="style03" href="#"><strong>微信号：www_ihref_com</strong><h2></h2><p><img alt="爱分享微信二维码" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/a.jpg" data-baiduimageplus-ignore=""></p></a></div>		<div class="widget widget_recent_entries">		<h3 class="widget_tit">近期文章</h3>		<ul>
+					<li>
+				<a href="http://www.ihref.com/read-17268.html">4000多件快递被烧毁，江西高速一快递货车着火</a>
+							<span class="post-date">2015年11月13日</span>
+						</li>
+					<li>
+				<a href="http://www.ihref.com/read-17257.html">新版100人民币已运至各地，将替换旧版，七大防伪术如何辨别真假</a>
+							<span class="post-date">2015年11月10日</span>
+						</li>
+					<li>
+				<a href="http://www.ihref.com/read-17245.html">印度最新9.0分剧情片《小萝莉的猴神大叔》BD高清中英双字下载</a>
+							<span class="post-date">2015年11月1日</span>
+						</li>
+					<li>
+				<a href="http://www.ihref.com/read-17241.html">扬州炒饭新标准出台：要达到米饭形态颗粒分明，不按照标准来将会被摘牌。</a>
+							<span class="post-date">2015年10月23日</span>
+						</li>
+					<li>
+				<a href="http://www.ihref.com/read-17237.html">nodejs+socket.io用nginx反向代理提示400 Bad Request及ws://…无法连接如何解决</a>
+							<span class="post-date">2015年10月21日</span>
+						</li>
+				</ul>
+		</div><div class="widget d_banner"><div class="d_banner_inner"><script async="" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/adsbygoogle.js"></script>
+<!-- 爱分享右侧广告（新）3 -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:360px;height:300px" data-ad-client="ca-pub-4019190604262164" data-ad-slot="9670452738"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:300px;margin:0;padding:0;position:relative;visibility:visible;width:360px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:300px;margin:0;padding:0;position:relative;visibility:visible;width:360px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="300" width="360"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><div class="widget d_postlist"><h3 class="widget_tit">推荐文章</h3><ul class="nopic"><li><a href="http://www.ihref.com/read-16623.html"><span class="text">用Meta标签代码让360双核浏览器默认极速模式打开网站不是兼容模式</span><span class="muted">2014-11-17</span><span class="muted">22评论</span></a></li>
+<li><a href="http://www.ihref.com/read-16422.html"><span class="text">30多条mysql数据库优化方法,千万级数据库记录查询轻松解决</span><span class="muted">2014-09-22</span><span class="muted">12评论</span></a></li>
+<li><a href="http://www.ihref.com/read-16675.html"><span class="text">两台无线路由器怎么连接设置桥连接让局域网覆盖整个家无线漫游安装方法</span><span class="muted">2014-12-03</span><span class="muted">12评论</span></a></li>
+<li><a href="http://www.ihref.com/read-15727.html"><span class="text">如何高速安全转移手机通讯录、短信、图片、软件等数据资料</span><span class="muted">2014-05-16</span><span class="muted">10评论</span></a></li>
+<li><a href="http://www.ihref.com/read-15442.html"><span class="text">2014年春天不可错过的旅行全攻略</span><span class="muted">2014-03-13</span><span class="muted">9评论</span></a></li>
+</ul></div><div class="widget d_banner"><div class="d_banner_inner"><script type="text/javascript">
+/*爱分享360*300，创建于2014-1-20*/
+var cpro_id = "u1458548";
+</script>
+<script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1458548_0"><iframe id="cproIframe_u1458548_4" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/acom_004.htm" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="true" align="center,center" frameborder="0" height="280" width="336"></iframe></div><script charset="utf-8" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/acom"></script></div></div><div class="widget d_postlist"><h3 class="widget_tit">随机文章</h3><ul class="nopic"><li><a href="http://www.ihref.com/read-2019.html"><span class="text">酷狗音乐播放器KTV伴唱伴奏功能设置的技巧</span><span class="muted">2013-11-09</span><span class="muted"></span></a></li>
+<li><a href="http://www.ihref.com/read-14458.html"><span class="text">QQ音乐贺岁版上线手机可遥控电脑播放歌曲</span><span class="muted">2014-01-27</span><span class="muted"></span></a></li>
+<li><a href="http://www.ihref.com/read-13818.html"><span class="text">国美在线1月8日今晚20点到24点年货夜总惠</span><span class="muted">2014-01-08</span><span class="muted"></span></a></li>
+<li><a href="http://www.ihref.com/read-14233.html"><span class="text">英雄联盟LOL官方公开第118位英雄造型首曝光</span><span class="muted">2014-01-18</span><span class="muted"></span></a></li>
+<li><a href="http://www.ihref.com/read-14950.html"><span class="text">华尔街日报称谷歌地图将更新五大功能</span><span class="muted">2014-02-22</span><span class="muted"></span></a></li>
+</ul></div><div class="widget d_banner"><div class="d_banner_inner"><script async="" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/adsbygoogle.js"></script>
+<!-- 爱分享右侧336*280 -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-4019190604262164" data-ad-slot="2028867132"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><div class="widget d_tag"><h3 class="widget_tit">标签云</h3><div class="d_tags"><a href="http://www.ihref.com/read-tag/%e6%94%bb%e7%95%a5">攻略 (33)</a><a href="http://www.ihref.com/read-tag/iphone">iPhone (25)</a><a href="http://www.ihref.com/read-tag/%e8%8b%b9%e6%9e%9c">苹果 (25)</a><a href="http://www.ihref.com/read-tag/2014%e5%b9%b4">2014年 (22)</a><a href="http://www.ihref.com/read-tag/%e5%be%ae%e8%bd%af">微软 (20)</a><a href="http://www.ihref.com/read-tag/%e8%8b%b1%e9%9b%84%e8%81%94%e7%9b%9f">英雄联盟 (19)</a><a href="http://www.ihref.com/read-tag/%e9%ad%94%e5%85%bd%e4%b8%96%e7%95%8c">魔兽世界 (17)</a><a href="http://www.ihref.com/read-tag/lol">LOL (17)</a><a href="http://www.ihref.com/read-tag/%e6%95%b0%e7%a0%81%e5%a4%a7%e5%b8%88">数码大师 (16)</a><a href="http://www.ihref.com/read-tag/windows">windows (16)</a><a href="http://www.ihref.com/read-tag/android">android (16)</a><a href="http://www.ihref.com/read-tag/ios-7">iOS 7 (15)</a><a href="http://www.ihref.com/read-tag/%e8%85%be%e8%ae%af">腾讯 (15)</a><a href="http://www.ihref.com/read-tag/%e6%a0%bc%e5%bc%8f%e8%bd%ac%e6%8d%a2">格式转换 (13)</a><a href="http://www.ihref.com/read-tag/dota2">DOTA2 (13)</a><a href="http://www.ihref.com/read-tag/qq">QQ (12)</a><a href="http://www.ihref.com/read-tag/windows-7">Windows 7 (12)</a><a href="http://www.ihref.com/read-tag/%e9%85%b7%e6%88%91%e9%9f%b3%e4%b9%90">酷我音乐 (11)</a><a href="http://www.ihref.com/read-tag/windows-8">Windows 8 (11)</a><a href="http://www.ihref.com/read-tag/%e7%82%89%e7%9f%b3%e4%bc%a0%e8%af%b4">炉石传说 (10)</a><a href="http://www.ihref.com/read-tag/%e8%b0%b7%e6%ad%8c">谷歌 (9)</a><a href="http://www.ihref.com/read-tag/%e6%8a%80%e5%b7%a7">技巧 (9)</a><a href="http://www.ihref.com/read-tag/%e6%89%8b%e6%b8%b8">手游 (9)</a><a href="http://www.ihref.com/read-tag/office">Office (9)</a><a href="http://www.ihref.com/read-tag/%e8%b6%8a%e7%8b%b1">越狱 (8)</a></div></div><div class="widget widget_meta"><h3 class="widget_tit">功能</h3>			<ul>
+						<li><a href="http://www.ihref.com/wp-login.php">登录</a></li>
+			<li><a href="http://www.ihref.com/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.ihref.com/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			</ul>
+</div><div style="position: fixed; top: 10px; z-index: 0; width: 360px; display: block;" class="widgetRoller"></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+            版权所有，保留一切权利！ © 2015 <a href="http://www.ihref.com/">爱分享</a>　京ICP备12017597号-京公网安备11010802011622｜<a href="http://www.ihref.com/contactus" target="_blank">联系我们</a>｜<a href="http://www.ihref.com/disclaimer" target="_blank">免责声明</a>｜<a href="http://www.ihref.com/sitemap.html" target="_blank">Sitemap</a>
+        </div>
+        <div class="trackcode pull-right">
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5674038'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/stat.php%3Fid%3D5674038' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_5674038"><a href="http://www.cnzz.com/stat/website.php?web_id=5674038" target="_blank" title="站长统计">站长统计</a></span><script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/stat.php" type="text/javascript"></script><script src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/core.php" charset="utf-8" type="text/javascript"></script>        </div>
+    </div>
+</footer><div style="position: absolute; border: 0px none; margin: 0px; padding: 0px; height: 0px; overflow: visible; text-align: left; top: 645px; left: 262px; width: 455px;"><div id="f21ac82b21eeb7322631b6aa94e17f45ede17c"><style media="screen" type="text/css">#f21ac82b21eeb7322631b6aa94e17f45ede17c {position:absolute;top:0;left:0;right:auto;bottom:auto;margin:0;padding:0;border:0;width:200px;background:transparent;-webkit-box-sizing:content-box;box-sizing:content-box;}#f21ac82b21eeb7322631b6aa94e17f45ede17c div{float:left;width:144px;height:17px;line-height:17px;margin:3px 0 0 -2px;background:url(http://ecma.bdimg.com/public03/imageplus/tip-back.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-back.png');font-family:sans-serif;text-align:center;font-size:12px;color:#666;padding:8px 10px;display:none;-webkit-box-sizing:content-box;box-sizing:content-box;}#f21ac82b21eeb7322631b6aa94e17f45ede17c-icon {float:left;height:38px;width:38px;cursor:default;background:url(http://ecma.bdimg.com/public03/imageplus/tip.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip.png');-webkit-box-sizing:content-box;box-sizing:content-box;}#f21ac82b21eeb7322631b6aa94e17f45ede17c-icon:hover {float:left;height:38px;width:38px;}#f21ac82b21eeb7322631b6aa94e17f45ede17c #f21ac82b21eeb7322631b6aa94e17f45ede17c-icon:hover {background:url(http://ecma.bdimg.com/public03/imageplus/tip-hover.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-hover.png');}</style><a href="javascript:void(0);" id="f21ac82b21eeb7322631b6aa94e17f45ede17c-icon"></a><div id="f21ac82b21eeb7322631b6aa94e17f45ede17c-msg">查看标识获取更多信息</div></div><style id="s-f21ac82b21eeb7322631b6aa94e17f451apnr8p" media="screen" type="text/css">.ad-widget-imageplus-single_image{font:12px/1.5 arial,sans-serif;position:relative;padding:1px;overflow:hidden;_zoom:1;background-color:#FFF}.ad-widget-imageplus-single_image img{display:block;width:300px!important;height:250px!important;padding:0;margin:0;border:0;position:static!important}.ad-widget-imageplus-single_image-redirect{position:absolute;top:0;left:0;_left:-1px;z-index:2;width:100%;height:100%;_height:252px;background-color:#FFF;opacity:0;filter:alpha(opacity=0)}.baiduimageplus-single-logo{position:absolute;bottom:0;right:0;z-index:90;height:18px;width:18px;text-indent:-9999px;background:url(http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png) no-repeat left top;background-position:0 0;_filter:progid:dximagetransform.microsoft.alphaimageloader(enabled=true,src="http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png",sizingMethod="crop");_background:none}
+.ad-widget-imageplus-box{position:absolute;top:0;left:0;margin:0;padding:0;width:0;height:0;overflow:visible!important}.ad-widget-imageplus-box-icon{position:absolute;top:0;left:0;z-index:10;width:38px;height:38px;overflow:hidden;cursor:pointer;background:url("http://ecma.bdimg.com/public03/imageplus/pa.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa.png')\9}.ad-widget-imageplus-box-icon:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-hover.png')\9}
+.ad-widget-imageplus-box-icon span{position:absolute;top:0;left:0;width:38px;height:38px;cursor:pointer;text-decoration:none;background-color:#FFF;opacity:0;filter:alpha(opacity=0)}span.ad-widget-imageplus-box-icon{cursor:default}.ad-widget-imageplus-box-icon-medical{background:url("http://ecma.bdimg.com/public03/imageplus/pa-medical.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-medical.png')\9}.ad-widget-imageplus-box-icon-medical:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-medical-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-medical-hover.png')\9}
+.ad-widget-imageplus-box-icon-decoration{background:url("http://ecma.bdimg.com/public03/imageplus/pa-decoration.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-decoration.png')\9}.ad-widget-imageplus-box-icon-decoration:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-decoration-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-decoration-hover.png')\9}.ad-widget-imageplus-box-icon-machine{background:url("http://ecma.bdimg.com/public03/imageplus/pa-machine.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-machine.png')\9}
+.ad-widget-imageplus-box-icon-machine:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-machine-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-machine-hover.png')\9}.ad-widget-imageplus-box-icon-photo{background:url("http://ecma.bdimg.com/public03/imageplus/pa-photo.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-photo.png')\9}.ad-widget-imageplus-box-icon-photo:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-photo-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-photo-hover.png')\9}
+.ad-widget-imageplus-box-icon-tourism{background:url("http://ecma.bdimg.com/public03/imageplus/pa-tourism.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-tourism.png')\9}.ad-widget-imageplus-box-icon-tourism:hover{background:url("http://ecma.bdimg.com/public03/imageplus/pa-tourism-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/pa-tourism-hover.png')\9}.ad-widget-imageplus-box-icon-game{background:url("http://ecma.bdimg.com/public03/imageplus/game.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/game.png')\9}
+.ad-widget-imageplus-box-icon-game:hover{background:url("http://ecma.bdimg.com/public03/imageplus/game-hover.png") no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/game-hover.png')\9}.ad-widget-imageplus-box-bd{position:absolute;top:0;left:0;z-index:11;display:none;overflow:visible;background:#FFF}.ad-widget-imageplus-box-bg{position:absolute;top:0;left:0;z-index:11;width:100%;height:100%;background:#FFF;opacity:.95;filter:alpha(opacity=95);border-radius:2px;-webkit-box-shadow:2px 2px 4px #000;-moz-box-shadow:2px 2px 4px #000;box-shadow:2px 2px 4px #000}.ad-widget-imageplus{position:relative;top:0;left:0;z-index:12}#f21ac82b21eeb7322631b6aa94e17f451apnr8p{font:12px/1.5 arial,sans-serif}</style><div data-rendered="true" style="margin: 0px; padding: 0px; border: medium none; overflow: visible; text-align: left;" id="f21ac82b21eeb7322631b6aa94e17f451apnr8p"><div style="left: 318.5px; top: 57px;" class="ad-widget-imageplus ad-widget-imageplus-box" id="w-wakwr9">
+<a class="ad-widget-imageplus-box-icon ad-widget-imageplus-box-icon-default" href="http://www.baidu.com/cpro.php?af0000j1_XF_X0qT0earaqjxRWDjT9asQHzrEEfwEMGM5PKD18gdzwuS82X7JWE2OavwGEMSkaXKprAvjQj1NKTfmC12tsOVsUHpNVlnCmAU56eIcGa8bwEXNX6e.DR_ifYgsqEb1wxCswc6WHKgg_vyUc7BmoLyNeorMIzs34-9h9moLNqPp60.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00Ivsqn6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkn160ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1dBuhfLuAwbP103ryR1nW-h0Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYvrD7VgYIrpYq_R6Kdpg0qHL9VPh3VI7FurRn0mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1Y3nWnzPWn3n0KVIWYk0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5HRLrjR100" target="_blank" id="w-wakwr9-icon" data-log="2" data-attach="1" style="width: 38px; height: 38px; display: none;">
+<!-- span遮盖了整个a，故需要加data-log和data-attach -->
+<span data-log="2" data-attach="1">&nbsp;</span>
+</a>
+<div class="ad-widget-imageplus-box-bd" id="w-wakwr9-content" style="top: 38px; left: -132px; width: 302px; height: 252px;">
+<div class="ad-widget-imageplus-box-bg" style=""></div>
+<div class="ad-widget-imageplus ad-widget-imageplus-single_image" id="w-5anl2h">
+<img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/0f000nZLyN9oMno9BrNQc0.gif">
+<!-- 图片频道会修改a的地址，如果img标签放在a里面的话 -->
+<a class="ad-widget-imageplus-single_image-redirect" href="http://www.baidu.com/cpro.php?af0000j1_XF_X0qT0earaqjxRWDjT9asQHzrEEfwEMGM5PKD18gdzwuS82X7JWE2OavwGEMSkaXKprAvjQj1NKTfmC12tsOVsUHpNVlnCmAU56eIcGa8bwEXNX6e.DR_ifYgsqEb1wxCswc6WHKgg_vyUc7BmoLyNeorMIzs34-9h9moLNqPp60.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00Ivsqn6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkn160ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1dBuhfLuAwbP103ryR1nW-h0Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYvrD7VgYIrpYq_R6Kdpg0qHL9VPh3VI7FurRn0mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1Y3nWnzPWn3n0KVIWYk0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5HRLrjR100" data-log="2" target="_blank">&nbsp;</a>
+<a class="baiduimageplus-single-logo" href="http://wangmeng.baidu.com/" title="百度网盟推广" target="_blank"></a>
+<!-- 新增的推广提示 -->
+<div style="position:absolute;left:0px;bottom:0px;width:29px!important;height:16px!important;overflow:hidden;background: url(http://ecmb.bdimg.com/public03/imageplus/leftbottom.png) no-repeat;"></div>
+</div>
+</div>
+</div></div></div>
+<script type="text/javascript" src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/form.js"></script>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<div class="modal hide fade" id="feed" tabindex="-1" style="width:400px;margin-left:-200px;"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">×</button><h3>订阅爱分享</h3></div><div class="modal-body"><p><strong>订阅地址</strong><br><input class="input-block-level" value="www.ihref.com/feed" readonly="readonly" type="text"></p><p></p><form class="subscribe-mail" action="http://list.qq.com/cgi-bin/qf_compose_send" target="_blank" method="post"><input name="t" value="qf_booked_feedback" type="hidden"><input name="id" value="4a711b81b79f02ecee3a32544db26af6ec2342595f6c5d3d" type="hidden"><strong>邮件订阅</strong><br><div class="form-inline clearfix"><input class="pull-left" style="width:300px;" id="to" name="to" placeholder="a@b.com" type="email"><input class="btn btn-primary pull-right" style="width:51px;" value="订阅" type="submit"></div></form><p></p><p><strong>订阅到</strong><br><a class="btn btn-mini btn-success" target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://www.ihref.com/feed">QQ邮箱</a> <a class="btn btn-mini btn-success" target="_blank" href="http://www.xianguo.com/subscribe.php?url=http://www.ihref.com/feed">鲜果</a> <a class="btn btn-mini btn-success" target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://www.ihref.com/feed">抓虾</a></p></div></div><div style="display: block;" class="rollto"><button class="btn btn-inverse" data-type="totop" title="回顶部"><i class="icon-eject icon-white"></i></button><button class="btn btn-inverse" data-type="torespond" title="发评论"><i class="icon-comment icon-white"></i></button></div><div style="position: absolute; border: 0px none; margin: 0px; padding: 0px; height: 0px; overflow: visible; text-align: left; top: 3600px; left: 29px; width: 444px;"><div id="f21ac82b21eeb7322631b6aa94e17f45ij3q3t"><style media="screen" type="text/css">#f21ac82b21eeb7322631b6aa94e17f45ij3q3t {position:absolute;top:0;left:0;right:auto;bottom:auto;margin:0;padding:0;border:0;width:200px;background:transparent;-webkit-box-sizing:content-box;box-sizing:content-box;}#f21ac82b21eeb7322631b6aa94e17f45ij3q3t div{float:left;width:144px;height:17px;line-height:17px;margin:3px 0 0 -2px;background:url(http://ecma.bdimg.com/public03/imageplus/tip-back.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-back.png');font-family:sans-serif;text-align:center;font-size:12px;color:#666;padding:8px 10px;display:none;-webkit-box-sizing:content-box;box-sizing:content-box;}#f21ac82b21eeb7322631b6aa94e17f45ij3q3t-icon {float:left;height:38px;width:38px;cursor:default;background:url(http://ecma.bdimg.com/public03/imageplus/tip.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip.png');-webkit-box-sizing:content-box;box-sizing:content-box;}#f21ac82b21eeb7322631b6aa94e17f45ij3q3t-icon:hover {float:left;height:38px;width:38px;}#f21ac82b21eeb7322631b6aa94e17f45ij3q3t #f21ac82b21eeb7322631b6aa94e17f45ij3q3t-icon:hover {background:url(http://ecma.bdimg.com/public03/imageplus/tip-hover.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-hover.png');}</style><a href="javascript:void(0);" id="f21ac82b21eeb7322631b6aa94e17f45ij3q3t-icon"></a><div id="f21ac82b21eeb7322631b6aa94e17f45ij3q3t-msg">查看标识获取更多信息</div></div><style id="s-f21ac82b21eeb7322631b6aa94e17f452d1y5lc" media="screen" type="text/css">.ad-widget-imageplus-sticker{font:12px/1.5 arial,sans-serif;position:absolute;left:0;width:100%;display:none;overflow:hidden;color:#FFF;background:transparent;-webkit-transition:height .5s,top .5s;transition:height .5s,top .5s}.ad-widget-imageplus-sticker div{background:transparent}.ad-widget-imageplus-sticker-cut{display:block}.ad-widget-imageplus-sticker-bg{position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;background:#000!important;box-shadow:2px 2px 4px #000}.ad-widget-imageplus-sticker-bd{position:relative;z-index:2;left:0;top:0;width:100%;overflow:hidden}.ad-widget-imageplus-sticker-close{position:absolute;z-index:3;right:0;top:5px;width:25px;height:25px;line-height:25px;text-decoration:none;text-align:center;font-size:18px;color:#FFF!important}.ad-widget-imageplus-sticker-close:hover{background-color:#000}
+.ad-widget-imageplus-sticker-theme-white{color:#333}.ad-widget-imageplus-sticker-theme-white .ad-widget-imageplus-sticker-bg{background:#FFF!important;box-shadow:2px 2px 4px #FFF}.ad-widget-imageplus-sticker-theme-white .ad-widget-imageplus-sticker-close{color:#666!important}.ad-widget-imageplus-sticker-theme-white .ad-widget-imageplus-sticker-close:hover{background-color:#FFF!important}.ad-widget-imageplus-sticker-theme-none{color:#333}.ad-widget-imageplus-sticker-theme-none .ad-widget-imageplus-sticker-bg{background:transparent!important;box-shadow:none}.ad-widget-imageplus-sticker-theme-none .ad-widget-imageplus-sticker-close{color:#666!important}.ad-widget-imageplus-sticker-theme-none .ad-widget-imageplus-sticker-close:hover{background-color:#FFF!important}.ad-widget-imageplus-sticker-theme-none-white{color:#333}
+.ad-widget-imageplus-sticker-theme-none-white .ad-widget-imageplus-sticker-bg{background:transparent!important;box-shadow:none}.ad-widget-imageplus-sticker-theme-none-white-2 .ad-widget-imageplus-sticker-bg{background:transparent!important;box-shadow:none}.ad-widget-imageplus-sticker-theme-none-white-2 .ad-widget-imageplus-sticker-close{top:0;text-indent:-9999px;background:url(http://ecma.bdimg.com/public03/imageplus/v2/dock/close.png) no-repeat 0 0 transparent}.ad-widget-imageplus-sticker-theme-v2 .ad-big-title{position:relative;top:0;opacity:1;filter:alpha(opacity=100);-webkit-transition:top .5s,opacity .6s;transition:top .5s,opacity .6s}.ad-widget-imageplus-sticker-theme-v2 .ad-widget-imageplus-sticker-showing .ad-big-title{position:relative;top:-36px;opacity:0;filter:alpha(opacity=0)}.ad-widget-imageplus-sticker-theme-v2 .ad-widget-imageplus-sticker-showing .ad-widget-imageplus-sticker-bg{top:26px}
+.ad-widget-imageplus-sticker-theme-v2 .ad-widget-imageplus-sticker-close{top:0;text-indent:-9999px;background:url(http://ecma.bdimg.com/public03/imageplus/v2/dock/close.png) no-repeat 0 0 transparent}.ad-widget-imageplus-sticker-thumbnail{font:12px/1.5 arial,sans-serif;position:absolute;right:0;top:0;height:20px;width:100px;overflow:hidden;background:transparent;-webkit-transition:height .5s;-moz-transition:height .5s;-ms-transition:height .5s;-o-transition:height .5s;transition:height .5s;background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000)}.ad-widget-imageplus-sticker-thumbnail a{float:right;width:100px;height:20px;line-height:20px;text-align:center;color:white;background:transparent;text-decoration:none}
+.ad-widget-imageplus-sticker-thumbnail i{width:12px;height:8px;margin-top:6px;margin-left:5px;display:block;float:left;background:url('http://ecma.bdimg.com/adtest/8e547549c94ab88c81b644d5ff63b0d3.png') no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/adtest/8e547549c94ab88c81b644d5ff63b0d3.png')\9}.ad-widget-imageplus-sticker-close-newstyle{top:0;text-indent:-9999px;background:url(http://ecmb.bdimg.com/public03/v2/dock/iconfont-close.png) no-repeat 0 0 transparent!important}.baiduimageplus-s-pa{position:relative;width:100%;height:101px;overflow:hidden;cursor:default;-webkit-transition:top .5s;-moz-transition:top .5s;-ms-transition:top .5s;-o-transition:top .5s;transition:top .5s}.baiduimageplus-s-pa a{outline:0;text-decoration:none}
+.baiduimageplus-s-pa a:hover{text-decoration:underline}.baiduimageplus-s-pa .baiduimageplus-s-pa-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}.baiduimageplus-s-pa .baiduimageplus-s-pa-ct{position:relative;z-index:2}.baiduimageplus-s-pa .baiduimageplus-s-pa-hd{height:26px;line-height:26px;text-indent:10px}.baiduimageplus-s-pa .baiduimageplus-s-pa-hd a{font-size:14px;color:#FFF}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd{position:relative;margin:10px 0;overflow:hidden;_zoom:1}.baiduimageplus-s-pa .baiduimageplus-s-pa-img{float:left;_display:inline;width:50px;height:50px;margin:5px 12px 0 10px}.baiduimageplus-s-pa .baiduimageplus-s-pa-img img{display:block;width:50px;height:50px;border:0}.baiduimageplus-s-pa .baiduimageplus-s-pa-img-bigoutter{float:left;_display:inline;width:70px;height:70px;_width:65px;_height:65px;margin:-20px 12px 0 10px;_margin:5px 5px 0 5px;_postion:relative}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-img-bigoutter img{width:70px;height:70px;_position:absolute;_top:-20px;_left:5px}.baiduimageplus-s-pa .baiduimageplus-s-pa-txt{margin-right:85px;height:54px;overflow:hidden;zoom:1;line-height:1.5;word-wrap:break-word;font-size:12px;text-align:left;text-decoration:none;-webkit-line-clamp:2}.baiduimageplus-s-pa .baiduimageplus-s-pa-txt a{color:#FFF}.baiduimageplus-s-pa .baiduimageplus-s-pa-txt a:hover{text-decoration:underline}.baiduimageplus-s-pa .baiduimageplus-s-pa-title,.baiduimageplus-s-pa .baiduimageplus-s-pa-desc,.baiduimageplus-s-pa .baiduimageplus-s-pa-links{float:none;padding:0;border:0;position:static;display:block;visibility:visible;text-align:left;background:transparent;-webkit-box-sizing:content-box;box-sizing:content-box;margin:0;height:18px;line-height:18px;zoom:1;color:#FFF;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-links a{float:left;_display:inline;padding:0 7px;color:#FFF;border-left:1px solid #999;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.baiduimageplus-s-pa .baiduimageplus-s-pa-links a:last-child{margin-right:0}.baiduimageplus-s-pa .baiduimageplus-s-pa-links a:first-child{border-left:none;padding-left:0}.baiduimageplus-s-pa .baiduimageplus-s-pa-links a:hover{text-decoration:underline}.baiduimageplus-s-pa .baiduimageplus-s-pa-title,.baiduimageplus-s-pa .baiduimageplus-s-pa-title a{color:#CCC}.baiduimageplus-s-pa .baiduimageplus-s-pa-bt{position:absolute;top:20px;right:10px;margin:0;width:70px;height:25px;display:block;text-decoration:none;color:#FFF;font-size:14px;text-align:center;line-height:25px;background:#bc0000;box-shadow:2px 2px 4px #000;border-radius:5px}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-bt:hover{-webkit-animation:none;animation:none;text-decoration:none;background-color:#ea2b2b}.baiduimageplus-s-pa .baiduimageplus-s-pa-logo{position:absolute;bottom:0;right:0;z-index:3;height:18px;width:18px;text-indent:-9999px;background:url(http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png) no-repeat left top;background-position:0 0;_filter:progid:dximagetransform.microsoft.alphaimageloader(enabled=true,src="http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png",sizingMethod="crop");_background:none}.ad-widget-imageplus-sticker-showing .baiduimageplus-s-pa-hd{opacity:0;filter:alpha(opacity=0)}.baiduimageplus-s-pa-links a{background:url(http://ecma.bdimg.com/adtest/5d5a28881dc5b110114e55cf6d4f69ec.png) no-repeat left top;background-position:0 0;_filter:progid:dximagetransform.microsoft.alphaimageloader(enabled=true,src=" http://ecma.bdimg.com/adtest/5d5a28881dc5b110114e55cf6d4f69ec.png",sizingMethod="crop");_background:none;display:inline-block;margin-right:3px!important;padding-left:13px!important;padding-right:7px;border:0!important}
+.baiduimageplus-s-pa-links a:hover{text-decoration:underline}</style><div data-rendered="true" style="margin: 0px; padding: 0px; border: medium none; overflow: visible; text-align: left;" id="f21ac82b21eeb7322631b6aa94e17f452d1y5lc"><div style="display: block; top: 426px; height: 100px;" class="ad-widget-imageplus-sticker ad-widget-imageplus-sticker-theme-v2 ad-widget-imageplus-sticker-cut" id="w-6zh9oe">
+<div style="display: block; top: 74px; height: 26px;" class="ad-widget-imageplus-sticker ad-widget-imageplus-sticker-wrapper ad-widget-imageplus-sticker-box-showing" id="w-6zh9oe-wrapper">
+<div class="ad-widget-imageplus-sticker-bg" id="w-6zh9oe-background" style="opacity: 0.75;"></div>
+<div class="ad-widget-imageplus-sticker-bd" id="w-6zh9oe-body">
+<div class="baiduimageplus-s-pa" id="w-mnev0t">
+<div class="baiduimageplus-s-pa-bg" id="w-mnev0t-background"></div>
+<div class="baiduimageplus-s-pa-ct">
+<div class="baiduimageplus-s-pa-hd">
+<a data-log="2" data-mid="93" href="http://www.baidu.com/cpro.php?af0000KlE7t9vFLXlKic8QwcFdTwztWXSqQ1EriciAgmmkLL1nWUv4yaGBVHaNEtRaHztzmQFMnnt1wWYIf9sPnV3CfK5u9IMaWJCoJavoWCDQoxu4Ps-6taz5Fe.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPWf0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1Ykm1nYPAf1nHm1m1c4PHf10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qPWPAu-wfU19nnA30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5HRknH0s00" target="_blank" style="">app开发-专业NO.1 app开发公司</a>
+</div>
+<div class="baiduimageplus-s-pa-bd">
+<a class="baiduimageplus-s-pa-img " href="http://www.baidu.com/cpro.php?af0000KlE7t9vFLXlKic8QwcFdTwztWXSqQ1EriciAgmmkLL1nWUv4yaGBVHaNEtRaHztzmQFMnnt1wWYIf9sPnV3CfK5u9IMaWJCoJavoWCDQoxu4Ps-6taz5Fe.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPWf0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1Ykm1nYPAf1nHm1m1c4PHf10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qPWPAu-wfU19nnA30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5HRknH0s00" data-log="2" data-mid="93" target="_blank">
+<img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/0f000n0lYUScbGnHwuiZe0.jpg">
+</a>
+<div class="baiduimageplus-s-pa-txt">
+<p class="baiduimageplus-s-pa-title">
+<a data-log="2" data-mid="93" href="http://www.baidu.com/cpro.php?af0000KlE7t9vFLXlKic8QwcFdTwztWXSqQ1EriciAgmmkLL1nWUv4yaGBVHaNEtRaHztzmQFMnnt1wWYIf9sPnV3CfK5u9IMaWJCoJavoWCDQoxu4Ps-6taz5Fe.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPWf0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1Ykm1nYPAf1nHm1m1c4PHf10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qPWPAu-wfU19nnA30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5HRknH0s00" target="_blank" style="">app开发-专业NO.1 app开发公司</a>
+</p>
+<p class="baiduimageplus-s-pa-desc" style="height:36px;white-space:normal;">
+<a id="w-mnev0t-desc" data-log="2" data-mid="93" href="http://www.baidu.com/cpro.php?af0000KlE7t9vFLXlKic8QwcFdTwztWXSqQ1EriciAgmmkLL1nWUv4yaGBVHaNEtRaHztzmQFMnnt1wWYIf9sPnV3CfK5u9IMaWJCoJavoWCDQoxu4Ps-6taz5Fe.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPWf0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1Ykm1nYPAf1nHm1m1c4PHf10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qPWPAu-wfU19nnA30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5HRknH0s00" target="_blank" style="">推出APP定制开发服务多年app经验量身定制 .上百知名企业成功案例上千企业不错选择.</a>
+</p>
+<p class="baiduimageplus-s-pa-links">
+</p>
+</div>
+<a style="top: 16px;" class="baiduimageplus-s-pa-bt" id="w-mnev0t-lookbtnshake" data-log="2" data-mid="93" href="http://www.baidu.com/cpro.php?af0000KlE7t9vFLXlKic8QwcFdTwztWXSqQ1EriciAgmmkLL1nWUv4yaGBVHaNEtRaHztzmQFMnnt1wWYIf9sPnV3CfK5u9IMaWJCoJavoWCDQoxu4Ps-6taz5Fe.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPWf0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1Ykm1nYPAf1nHm1m1c4PHf10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qPWPAu-wfU19nnA30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5HRknH0s00" target="_blank">去看看</a>
+</div>
+</div>
+<a class="baiduimageplus-s-pa-logo" title="百度网盟推广" href="http://wangmeng.baidu.com/" target="_blank" data-ignore=""></a>
+<!-- 新增的推广提示 -->
+<div style="position:absolute;left:0px;bottom:0px;width:29px;height:16px;overflow:hidden;z-index:12;background: url(http://ecmb.bdimg.com/public03/imageplus/leftbottom.png) no-repeat;"></div>
+</div>
+</div>
+</div>
+<a style="display: none;" class="ad-widget-imageplus-sticker-close " href="#" id="w-6zh9oe-close">X</a>
+</div>
+<div class="ad-widget-imageplus-sticker-thumbnail" id="w-6zh9oe-thumbnail" style="display: none; top: 506px;">
+<a href="#" title="点击展开"><i>&nbsp;</i>图片相关信息</a>
+</div></div></div><div style="position: absolute; border: 0px none; margin: 0px; padding: 0px; height: 0px; overflow: visible; text-align: left; top: 4308px; left: 29px; width: 447px;"><div id="f21ac82b21eeb7322631b6aa94e17f45mxvau5"><style media="screen" type="text/css">#f21ac82b21eeb7322631b6aa94e17f45mxvau5 {position:absolute;top:0;left:0;right:auto;bottom:auto;margin:0;padding:0;border:0;width:200px;background:transparent;-webkit-box-sizing:content-box;box-sizing:content-box;}#f21ac82b21eeb7322631b6aa94e17f45mxvau5 div{float:left;width:144px;height:17px;line-height:17px;margin:3px 0 0 -2px;background:url(http://ecma.bdimg.com/public03/imageplus/tip-back.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-back.png');font-family:sans-serif;text-align:center;font-size:12px;color:#666;padding:8px 10px;display:none;-webkit-box-sizing:content-box;box-sizing:content-box;}#f21ac82b21eeb7322631b6aa94e17f45mxvau5-icon {float:left;height:38px;width:38px;cursor:default;background:url(http://ecma.bdimg.com/public03/imageplus/tip.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip.png');-webkit-box-sizing:content-box;box-sizing:content-box;}#f21ac82b21eeb7322631b6aa94e17f45mxvau5-icon:hover {float:left;height:38px;width:38px;}#f21ac82b21eeb7322631b6aa94e17f45mxvau5 #f21ac82b21eeb7322631b6aa94e17f45mxvau5-icon:hover {background:url(http://ecma.bdimg.com/public03/imageplus/tip-hover.png) 0 0 no-repeat;_background:0;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/public03/imageplus/tip-hover.png');}</style><a href="javascript:void(0);" id="f21ac82b21eeb7322631b6aa94e17f45mxvau5-icon"></a><div id="f21ac82b21eeb7322631b6aa94e17f45mxvau5-msg">查看标识获取更多信息</div></div><style id="s-f21ac82b21eeb7322631b6aa94e17f453st2liz" media="screen" type="text/css">.ad-widget-imageplus-sticker{font:12px/1.5 arial,sans-serif;position:absolute;left:0;width:100%;display:none;overflow:hidden;color:#FFF;background:transparent;-webkit-transition:height .5s,top .5s;transition:height .5s,top .5s}.ad-widget-imageplus-sticker div{background:transparent}.ad-widget-imageplus-sticker-cut{display:block}.ad-widget-imageplus-sticker-bg{position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;background:#000!important;box-shadow:2px 2px 4px #000}.ad-widget-imageplus-sticker-bd{position:relative;z-index:2;left:0;top:0;width:100%;overflow:hidden}.ad-widget-imageplus-sticker-close{position:absolute;z-index:3;right:0;top:5px;width:25px;height:25px;line-height:25px;text-decoration:none;text-align:center;font-size:18px;color:#FFF!important}.ad-widget-imageplus-sticker-close:hover{background-color:#000}
+.ad-widget-imageplus-sticker-theme-white{color:#333}.ad-widget-imageplus-sticker-theme-white .ad-widget-imageplus-sticker-bg{background:#FFF!important;box-shadow:2px 2px 4px #FFF}.ad-widget-imageplus-sticker-theme-white .ad-widget-imageplus-sticker-close{color:#666!important}.ad-widget-imageplus-sticker-theme-white .ad-widget-imageplus-sticker-close:hover{background-color:#FFF!important}.ad-widget-imageplus-sticker-theme-none{color:#333}.ad-widget-imageplus-sticker-theme-none .ad-widget-imageplus-sticker-bg{background:transparent!important;box-shadow:none}.ad-widget-imageplus-sticker-theme-none .ad-widget-imageplus-sticker-close{color:#666!important}.ad-widget-imageplus-sticker-theme-none .ad-widget-imageplus-sticker-close:hover{background-color:#FFF!important}.ad-widget-imageplus-sticker-theme-none-white{color:#333}
+.ad-widget-imageplus-sticker-theme-none-white .ad-widget-imageplus-sticker-bg{background:transparent!important;box-shadow:none}.ad-widget-imageplus-sticker-theme-none-white-2 .ad-widget-imageplus-sticker-bg{background:transparent!important;box-shadow:none}.ad-widget-imageplus-sticker-theme-none-white-2 .ad-widget-imageplus-sticker-close{top:0;text-indent:-9999px;background:url(http://ecma.bdimg.com/public03/imageplus/v2/dock/close.png) no-repeat 0 0 transparent}.ad-widget-imageplus-sticker-theme-v2 .ad-big-title{position:relative;top:0;opacity:1;filter:alpha(opacity=100);-webkit-transition:top .5s,opacity .6s;transition:top .5s,opacity .6s}.ad-widget-imageplus-sticker-theme-v2 .ad-widget-imageplus-sticker-showing .ad-big-title{position:relative;top:-36px;opacity:0;filter:alpha(opacity=0)}.ad-widget-imageplus-sticker-theme-v2 .ad-widget-imageplus-sticker-showing .ad-widget-imageplus-sticker-bg{top:26px}
+.ad-widget-imageplus-sticker-theme-v2 .ad-widget-imageplus-sticker-close{top:0;text-indent:-9999px;background:url(http://ecma.bdimg.com/public03/imageplus/v2/dock/close.png) no-repeat 0 0 transparent}.ad-widget-imageplus-sticker-thumbnail{font:12px/1.5 arial,sans-serif;position:absolute;right:0;top:0;height:20px;width:100px;overflow:hidden;background:transparent;-webkit-transition:height .5s;-moz-transition:height .5s;-ms-transition:height .5s;-o-transition:height .5s;transition:height .5s;background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000)}.ad-widget-imageplus-sticker-thumbnail a{float:right;width:100px;height:20px;line-height:20px;text-align:center;color:white;background:transparent;text-decoration:none}
+.ad-widget-imageplus-sticker-thumbnail i{width:12px;height:8px;margin-top:6px;margin-left:5px;display:block;float:left;background:url('http://ecma.bdimg.com/adtest/8e547549c94ab88c81b644d5ff63b0d3.png') no-repeat 0 0;background:none \9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='corp',src='http://ecma.bdimg.com/adtest/8e547549c94ab88c81b644d5ff63b0d3.png')\9}.ad-widget-imageplus-sticker-close-newstyle{top:0;text-indent:-9999px;background:url(http://ecmb.bdimg.com/public03/v2/dock/iconfont-close.png) no-repeat 0 0 transparent!important}.baiduimageplus-s-pa{position:relative;width:100%;height:101px;overflow:hidden;cursor:default;-webkit-transition:top .5s;-moz-transition:top .5s;-ms-transition:top .5s;-o-transition:top .5s;transition:top .5s}.baiduimageplus-s-pa a{outline:0;text-decoration:none}
+.baiduimageplus-s-pa a:hover{text-decoration:underline}.baiduimageplus-s-pa .baiduimageplus-s-pa-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}.baiduimageplus-s-pa .baiduimageplus-s-pa-ct{position:relative;z-index:2}.baiduimageplus-s-pa .baiduimageplus-s-pa-hd{height:26px;line-height:26px;text-indent:10px}.baiduimageplus-s-pa .baiduimageplus-s-pa-hd a{font-size:14px;color:#FFF}.baiduimageplus-s-pa .baiduimageplus-s-pa-bd{position:relative;margin:10px 0;overflow:hidden;_zoom:1}.baiduimageplus-s-pa .baiduimageplus-s-pa-img{float:left;_display:inline;width:50px;height:50px;margin:5px 12px 0 10px}.baiduimageplus-s-pa .baiduimageplus-s-pa-img img{display:block;width:50px;height:50px;border:0}.baiduimageplus-s-pa .baiduimageplus-s-pa-img-bigoutter{float:left;_display:inline;width:70px;height:70px;_width:65px;_height:65px;margin:-20px 12px 0 10px;_margin:5px 5px 0 5px;_postion:relative}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-img-bigoutter img{width:70px;height:70px;_position:absolute;_top:-20px;_left:5px}.baiduimageplus-s-pa .baiduimageplus-s-pa-txt{margin-right:85px;height:54px;overflow:hidden;zoom:1;line-height:1.5;word-wrap:break-word;font-size:12px;text-align:left;text-decoration:none;-webkit-line-clamp:2}.baiduimageplus-s-pa .baiduimageplus-s-pa-txt a{color:#FFF}.baiduimageplus-s-pa .baiduimageplus-s-pa-txt a:hover{text-decoration:underline}.baiduimageplus-s-pa .baiduimageplus-s-pa-title,.baiduimageplus-s-pa .baiduimageplus-s-pa-desc,.baiduimageplus-s-pa .baiduimageplus-s-pa-links{float:none;padding:0;border:0;position:static;display:block;visibility:visible;text-align:left;background:transparent;-webkit-box-sizing:content-box;box-sizing:content-box;margin:0;height:18px;line-height:18px;zoom:1;color:#FFF;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-links a{float:left;_display:inline;padding:0 7px;color:#FFF;border-left:1px solid #999;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.baiduimageplus-s-pa .baiduimageplus-s-pa-links a:last-child{margin-right:0}.baiduimageplus-s-pa .baiduimageplus-s-pa-links a:first-child{border-left:none;padding-left:0}.baiduimageplus-s-pa .baiduimageplus-s-pa-links a:hover{text-decoration:underline}.baiduimageplus-s-pa .baiduimageplus-s-pa-title,.baiduimageplus-s-pa .baiduimageplus-s-pa-title a{color:#CCC}.baiduimageplus-s-pa .baiduimageplus-s-pa-bt{position:absolute;top:20px;right:10px;margin:0;width:70px;height:25px;display:block;text-decoration:none;color:#FFF;font-size:14px;text-align:center;line-height:25px;background:#bc0000;box-shadow:2px 2px 4px #000;border-radius:5px}
+.baiduimageplus-s-pa .baiduimageplus-s-pa-bt:hover{-webkit-animation:none;animation:none;text-decoration:none;background-color:#ea2b2b}.baiduimageplus-s-pa .baiduimageplus-s-pa-logo{position:absolute;bottom:0;right:0;z-index:3;height:18px;width:18px;text-indent:-9999px;background:url(http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png) no-repeat left top;background-position:0 0;_filter:progid:dximagetransform.microsoft.alphaimageloader(enabled=true,src="http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png",sizingMethod="crop");_background:none}.ad-widget-imageplus-sticker-showing .baiduimageplus-s-pa-hd{opacity:0;filter:alpha(opacity=0)}.baiduimageplus-s-pa-links a{background:url(http://ecma.bdimg.com/adtest/5d5a28881dc5b110114e55cf6d4f69ec.png) no-repeat left top;background-position:0 0;_filter:progid:dximagetransform.microsoft.alphaimageloader(enabled=true,src=" http://ecma.bdimg.com/adtest/5d5a28881dc5b110114e55cf6d4f69ec.png",sizingMethod="crop");_background:none;display:inline-block;margin-right:3px!important;padding-left:13px!important;padding-right:7px;border:0!important}
+.baiduimageplus-s-pa-links a:hover{text-decoration:underline}</style><div data-rendered="true" style="margin: 0px; padding: 0px; border: medium none; overflow: visible; text-align: left;" id="f21ac82b21eeb7322631b6aa94e17f453st2liz"><div style="display: block; top: 578px; height: 100px;" class="ad-widget-imageplus-sticker ad-widget-imageplus-sticker-theme-v2 ad-widget-imageplus-sticker-cut" id="w-h6ri1z">
+<div style="display: block; top: 74px; height: 26px;" class="ad-widget-imageplus-sticker ad-widget-imageplus-sticker-wrapper ad-widget-imageplus-sticker-box-showing" id="w-h6ri1z-wrapper">
+<div class="ad-widget-imageplus-sticker-bg" id="w-h6ri1z-background" style="opacity: 0.75;"></div>
+<div class="ad-widget-imageplus-sticker-bd" id="w-h6ri1z-body">
+<div class="baiduimageplus-s-pa" id="w-vs9v0f">
+<div class="baiduimageplus-s-pa-bg" id="w-vs9v0f-background"></div>
+<div class="baiduimageplus-s-pa-ct">
+<div class="baiduimageplus-s-pa-hd">
+<a data-log="2" data-mid="94" href="http://www.baidu.com/cpro.php?af0000jipZj-RyZhK9HPhckXup8DM3nKkWzlthzHmmCIMqDpfR5wGUTQCx6I_4rivKpC28_LZ0CWv57ibgdrtCNhEjEMfIftjMIIqQMAQV3J_9-8TwcHKkn29jbK.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPHb0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1YvuHT3PjfvPvN9mWPBn1n10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qXZGsXHwwy-91ny30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5Hf4njbd00" target="_blank" style="">app开发-专业NO.1 app开发公司</a>
+</div>
+<div class="baiduimageplus-s-pa-bd">
+<a class="baiduimageplus-s-pa-img " href="http://www.baidu.com/cpro.php?af0000jipZj-RyZhK9HPhckXup8DM3nKkWzlthzHmmCIMqDpfR5wGUTQCx6I_4rivKpC28_LZ0CWv57ibgdrtCNhEjEMfIftjMIIqQMAQV3J_9-8TwcHKkn29jbK.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPHb0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1YvuHT3PjfvPvN9mWPBn1n10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qXZGsXHwwy-91ny30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5Hf4njbd00" data-log="2" data-mid="94" target="_blank">
+<img src="Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6%E7%BB%93%E5%90%88GitHub%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C%20%E2%80%93%20%E7%88%B1%E5%88%86%E4%BA%AB_files/9a5a76cb8defd0a62eeff4aaf7389d93.jpg">
+</a>
+<div class="baiduimageplus-s-pa-txt">
+<p class="baiduimageplus-s-pa-title">
+<a data-log="2" data-mid="94" href="http://www.baidu.com/cpro.php?af0000jipZj-RyZhK9HPhckXup8DM3nKkWzlthzHmmCIMqDpfR5wGUTQCx6I_4rivKpC28_LZ0CWv57ibgdrtCNhEjEMfIftjMIIqQMAQV3J_9-8TwcHKkn29jbK.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPHb0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1YvuHT3PjfvPvN9mWPBn1n10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qXZGsXHwwy-91ny30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5Hf4njbd00" target="_blank" style="">app开发-专业NO.1 app开发公司</a>
+</p>
+<p class="baiduimageplus-s-pa-desc" style="height:36px;white-space:normal;">
+<a id="w-vs9v0f-desc" data-log="2" data-mid="94" href="http://www.baidu.com/cpro.php?af0000jipZj-RyZhK9HPhckXup8DM3nKkWzlthzHmmCIMqDpfR5wGUTQCx6I_4rivKpC28_LZ0CWv57ibgdrtCNhEjEMfIftjMIIqQMAQV3J_9-8TwcHKkn29jbK.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPHb0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1YvuHT3PjfvPvN9mWPBn1n10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qXZGsXHwwy-91ny30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5Hf4njbd00" target="_blank" style="">推出APP定制开发服务多年app经验量身定制 .上百知名企业成功案例上千企业不错选择.</a>
+</p>
+<p class="baiduimageplus-s-pa-links">
+</p>
+</div>
+<a style="top: 20px;" class="baiduimageplus-s-pa-bt" id="w-vs9v0f-lookbtnshake" data-log="2" data-mid="94" href="http://www.baidu.com/cpro.php?af0000jipZj-RyZhK9HPhckXup8DM3nKkWzlthzHmmCIMqDpfR5wGUTQCx6I_4rivKpC28_LZ0CWv57ibgdrtCNhEjEMfIftjMIIqQMAQV3J_9-8TwcHKkn29jbK.DY_aOFAl7ePZb6StNzXBKMZW8HqapQ_X-nNKmh2qd-Xl1GLT_rrumuCy2OZ_3qB6.IgF_5y9YIZ0lQzqLILT8py9zuym8mvqVQLF-myfVnHm1PWb8pZwVU0KYUHYkPjcvnW6s0Zwd5gRznW6zPHmY0Zwb5H00IvsqP6KWUMw85HDdnjDdnjmdgvPsT6KWpAdb5HD0TvPCUyfqnfK1TjYkPHb0ug9Y5H00mywWUA71T1Ys0ZPbpdqv5H00IvbqnfK1uAVxIhNzTv-EUWY0Uh71IZ0qn0KzT1Ys0APh5H00mLwV5yF9pywdfLN1IDG1Uv30Uh7YIHY40A-Ypyfqn0KGIA-8uhqGujYs0AIspyfqn0Kzuyuspyfqn0KWTZFEpyfqwH6vwHuKP19DPbPjfWIKfHIarD7jwDNKrHDLwbc3fHb0mvqVTAk-5H00mywxT1YvuHT3PjfvPvN9mWPBn1n10Ak9UjY0mgwGujY0mgwYXHY0ILPzm1Yknj00myNxIA7z5fKGTdqoIADqn0K1UZPzm1Ys0ZP_mv_qn0K1UAVGujYs0AFduAI-I7q-XZKGujYs0A7GTjYVpHIHIY7cRjwLTsKdpg0qXZGsXHwwy-91ny30mv6qn0KYmgcqr0KGUgTqn0KbIZ0qnfK1uyk_ugFxpyfqPfKGTdq9TZ0qn0K9TZKxpyfqn0KWIgPY5fKGTdqLpgF-UAN1T1Ys0ZI9T7qYXgK-5H00TAsqn0KVm1YLn1T4myczmsKVIWYz0A4vTjYsQW0snj0snj0s0AT45HD0uh-zTLwxThNMpyq85HD0TvNWUv4bgLF-uv-EUWYLPjb0TLPs5HR0TLPsnWYk0ZwYTjYk0AwGTLws5H00mycqn0K9uZ6qnfKsuMwzmyw-5H60TZPYTh7buHY3njD0TA-b5H00ILKGujYs0A7bIZ-suHYs0ZPGThN8uANz5H00TLIGujYs0ZPYXgK-5H00mLFW5Hf4njbd00" target="_blank">去看看</a>
+</div>
+</div>
+<a class="baiduimageplus-s-pa-logo" title="百度网盟推广" href="http://wangmeng.baidu.com/" target="_blank" data-ignore=""></a>
+<!-- 新增的推广提示 -->
+<div style="position:absolute;left:0px;bottom:0px;width:29px;height:16px;overflow:hidden;z-index:12;background: url(http://ecmb.bdimg.com/public03/imageplus/leftbottom.png) no-repeat;"></div>
+</div>
+</div>
+</div>
+<a style="display: none;" class="ad-widget-imageplus-sticker-close " href="#" id="w-h6ri1z-close">X</a>
+</div>
+<div class="ad-widget-imageplus-sticker-thumbnail" id="w-h6ri1z-thumbnail" style="display: none; top: 658px;">
+<a href="#" title="点击展开"><i>&nbsp;</i>图片相关信息</a>
+</div></div></div></body></html>

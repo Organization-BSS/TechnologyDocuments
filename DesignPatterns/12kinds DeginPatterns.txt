@@ -1,0 +1,21 @@
+1.策略模式(Strategy): 定义了算法家族, 分别封装起来, 让它们之间可以互相替换.
+比如Collections.sort(List list, Comparator c); 可以通过实现多个Comparator接口来达到多种排序的目的.
+2.装饰着模式(Decorator): 动态的给一个对象添加一些额外的职责.
+比如java.io包. BufferedInputStream封装了FileInputStream, 它们都实现了InputStream接口, 但前者实现了readLine方法.
+3.代理模式(Proxy): 为其他对象提供一种代理以控制对这个对象的访问.
+比如在用户登录时, 真正的登录类和代理登录类都实现了Login接口, 不同的是Proxy类的方法中增加了用户是否合法的判断, 只有合法时才去调用真正登录类的login方法. 用户访问的其实是Proxy的login方法.
+4.工厂模式(Factory): 定义一个用以创建对象的接口, 让子类决定实例化哪个类.
+当遇到需要根据某个前提条件创建不同的类实现时, 会实用工厂模式.
+5.模板模式(Template): 定义一个操作中的算法骨架, 而将一些步骤延迟到子类中.
+比如HibernateTemplate, 在Template中已经定义了Connection开关的实现, 用户只需要在子类中根据不同的业务写不同的sql.
+6.外观模式(Facade): 为子系统中的一组接口提供一个一致的界面.
+一直在用, 比如DBUtil, 将所有数据库对象封装了, 只留了DBUtil.getDBUtil()这个接口.
+7.建造者模式(Builder): 将一个复杂对象的构建与它的表示分离.
+8.观察者模式(Observer): 定义了一种一对多的依赖关系,让多个观察者对象同时监听某一主题对象,在它的状态发生变化时,会通知所有的观察者.
+比如ServletContextListener, 在applcation启动时, 会通知所有这个接口的实现类.
+9.抽象工厂模式(Abstract Factory): 提供一个创建一系列相关或相互依赖对象的接口, 而无需指定它们具体的类.
+10.适配器模式(Adapter): 将一个类的接口转换成客户希望的另一个接口.
+11.单例模式(Singleton): 保证一个类仅有一个实例,并提供一个访问它的全局控制点.
+比如在加载配置文件时, 可使用该模式.
+12.命令模式(Command): 将一个请求封装成为一个对象, 使可以用不同的请求对客户进行参数化.
+比如Struts的MVC结构, 其实就是个Command模式. 

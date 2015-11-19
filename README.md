@@ -1,5 +1,3 @@
-# TechnologyDocuments
-some Documents about IT Technology
-
-user 1
-user 2
+# RelatedTechnologyDocuments
+some documents for developing iOS app ,for remembering and studying
+READ ME
